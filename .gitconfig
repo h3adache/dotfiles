@@ -27,7 +27,7 @@
   a = add
   m = merge
   co = checkout
-  b = branch -a
+  b = branch
   f = fetch
   rb = rebase
   p = pull
