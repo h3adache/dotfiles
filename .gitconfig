@@ -2,5 +2,33 @@
 	name = Tim Chen
 	email = chengt@gmail.com
 [alias]
-	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  
+  # I like using the interactive mode to make complex commits
+  ai = add --interactive
 
+  # modified from http://www.metacircus.com/hacking/2011/02/18/play-git-like-a-violin.html
+  c = commit
+  cm = commit -m
+  cma = commit -a -m
+  # amending the previous commit
+  ca = commit --amend
+  caa = commit -a --amend -C HEAD
+
+  # reset
+  ## soft resets
+  r = reset
+  ## hard resets
+  rh = reset --hard
+
+  # shortcuts for commands
+  s = status
+  d = diff
+  a = add
+  m = merge
+  co = checkout
+  b = branch -a
+  f = fetch
+  rb = rebase
+  p = pull
+  ph = push

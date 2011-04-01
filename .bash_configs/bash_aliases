@@ -8,3 +8,6 @@ alias l='ls -CF'
 alias mvn='mvn -T 2C'
 alias cow='ssh root@masterusers'
 alias svnchlog='svn propset svn:log --revprop -r '
+
+# git
+alias g='git'
