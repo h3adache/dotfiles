@@ -1,0 +1,4 @@
+check out to $HOME as .bash_configs/ and ln to .bash_profile
+source ~/.bash_profile and everything else will be picked up
+
+git-completion.bash came from the install of git and can be swapped out or symlinked (prefered)
