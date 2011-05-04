@@ -14,3 +14,5 @@ export M2=$M2_HOME/bin
 export MAVEN_OPTS="-Xmx1024m -XX:MaxPermSize=256m"
 
 export PATH=$HOME/bin:$M2:$PATH
+
+complete -o default -o nospace -F _git g
