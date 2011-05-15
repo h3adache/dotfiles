@@ -1,1 +1,1 @@
-[ -r ~/.bash_configs/git-completion.bash ] && . ~/.bash_configs/git-completion.bash
+[ -r ~/.dotfiles/git-completion.bash ] && . ~/.dotfiles/git-completion.bash

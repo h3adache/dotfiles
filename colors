@@ -16,7 +16,7 @@ export bold_blue=$'\e[1;34m'
 export bold_purple=$'\e[1;35m'
 export bold_cyan=$'\e[1;36m'
 export bold_white=$'\e[1;37m'
-export bold_orange=$'\e[1;33;40m'
+export bold_orange=$'\e[1;40m'
 
 export underline_black=$'\e[4;30m'
 export underline_red=$'\e[4;31m'
