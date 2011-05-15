@@ -1,9 +1,11 @@
-# Alias definitions.
-[ -r ~/.bash_configs/bash_aliases ] && . ~/.bash_configs/bash_aliases
-[ -r ~/.bash_configs/bash_completions ] && . ~/.bash_configs/bash_completions
-[ -r ~/.bash_configs/bash_colors ] && . ~/.bash_configs/bash_colors
+export CHECKOUT=.dotfiles
 
-export PS1="[\u@\h \w \$] "
+[ -r ~/${CHECKOUT}/colors ] && . ~/${CHECKOUT}/colors
+[ -r ~/${CHECKOUT}/bash_aliases ] && . ~/${CHECKOUT}/bash_aliases
+[ -r ~/${CHECKOUT}/bash_completions ] && . ~/${CHECKOUT}/bash_completions
+[ -r ~/${CHECKOUT}/bash_colors ] && . ~/${CHECKOUT}/bash_colors
+
+export PS1="[ \[${bold_cyan}\]\u\[${normal}\] at \[${bold_yellow}\]\h \[${normal}\]] \n \[${bold_red}\]\w \[${normal}\] \$ "
 export EDITOR=/usr/bin/vi
 
 export JAVA_HOME=`/usr/libexec/java_home`
