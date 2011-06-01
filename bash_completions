@@ -1,1 +1,1 @@
-[ -r ~/.dotfiles/git-completion.bash ] && . ~/.dotfiles/git-completion.bash
+[ -r ~/.dotfiles/m2-completion.bash ] && . ~/.dotfiles/m2-completion.bash

@@ -1,4 +1,7 @@
 export CHECKOUT=.dotfiles
+export BREW_PREFIX=`brew --prefix`
+
+[ -r ${BREW_PREFIX}/etc/bash_completion ] && . ${BREW_PREFIX}/etc/bash_completion
 
 [ -r ~/${CHECKOUT}/colors ] && . ~/${CHECKOUT}/colors
 [ -r ~/${CHECKOUT}/functions ] && . ~/${CHECKOUT}/functions
