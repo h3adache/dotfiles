@@ -1,0 +1,2 @@
+export BC_PREFIX=`brew --prefix`
+export JAVA_HOME=`/usr/libexec/java_home`

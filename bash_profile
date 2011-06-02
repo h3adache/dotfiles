@@ -1,7 +1,13 @@
 export CHECKOUT=.dotfiles
-export BREW_PREFIX=`brew --prefix`
 
-[ -r ${BREW_PREFIX}/etc/bash_completion ] && . ${BREW_PREFIX}/etc/bash_completion
+unamestr=`uname`
+if [[ "$unamestr" == 'Linux' ]]; then
+   [ -r ~/${CHECKOUT}/bash_linux ] && . ~/${CHECKOUT}/bash_linux
+elif [[ "$unamestr" == 'Darwin' ]]; then
+   [ -r ~/${CHECKOUT}/bash_darwin ] && . ~/${CHECKOUT}/bash_darwin
+fi
+
+[ -r ${BC_PREFIX}/etc/bash_completion ] && . ${BC_PREFIX}/etc/bash_completion
 
 [ -r ~/${CHECKOUT}/colors ] && . ~/${CHECKOUT}/colors
 [ -r ~/${CHECKOUT}/functions ] && . ~/${CHECKOUT}/functions
@@ -12,9 +18,7 @@ export BREW_PREFIX=`brew --prefix`
 export PS1="[ \[${bold_blue}\]\u\[${normal}\] at \[${bold_cyan}\]\h \[${bold_yellow}\]\$(parse_git_branch)\[${normal}\]] \n \[${bold_red}\]\w \[${normal}\] \$ "
 export EDITOR=/usr/bin/vi
 
-export JAVA_HOME=`/usr/libexec/java_home`
-
-export M2_HOME=/usr/local/share/maven
+export M2_HOME=$HOME/opt/maven
 export M2=$M2_HOME/bin
 
 export MAVEN_OPTS="-Xmx1024m -XX:MaxPermSize=256m"
