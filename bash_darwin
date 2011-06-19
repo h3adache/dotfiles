@@ -1,2 +1,5 @@
 export BC_PREFIX=`brew --prefix`
 export JAVA_HOME=`/usr/libexec/java_home`
+
+export M2_HOME=/usr/share/maven
+export M2=$M2_HOME/bin

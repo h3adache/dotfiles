@@ -15,11 +15,10 @@ fi
 [ -r ~/${CHECKOUT}/bash_completions ] && . ~/${CHECKOUT}/bash_completions
 [ -r ~/${CHECKOUT}/bash_colors ] && . ~/${CHECKOUT}/bash_colors
 
+[[ -s $HOME/.rvm/scripts/rvm ]] && . $HOME/.rvm/scripts/rvm
+
 export PS1="[ \[${bold_blue}\]\u\[${normal}\] at \[${bold_cyan}\]\h \[${bold_yellow}\]\$(parse_git_branch)\[${normal}\]] \n \[${bold_red}\]\w \[${normal}\] \$ "
 export EDITOR=/usr/bin/vi
-
-export M2_HOME=$HOME/opt/maven
-export M2=$M2_HOME/bin
 
 export MAVEN_OPTS="-Xmx1024m -XX:MaxPermSize=256m"
 
