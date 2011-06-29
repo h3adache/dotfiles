@@ -6,10 +6,9 @@ _mvn()
   cmds="clean validate compile test package integration-test \
   verify install deploy test-compile site generate-sources \
   process-sources generate-resources process-resources \
-  eclipse:eclipse eclipse:add-maven-repo eclipse:clean \
-  idea:idea -DartifactId= -DgroupId= -Dmaven.test.skip=true \
+  idea:idea -DartifactId= -DgroupId= -DskipTests \
   -DarchetypeArtifactId= \
-  jetty:run exec:java \
+  jetty:run exec:java exec:exec \
   migration:new migration:up migration:down -Dmigration.description= \
   dependency:analyze dependency:resolve \
   versions:display-dependency-updates versions:display-plugin-updates \
