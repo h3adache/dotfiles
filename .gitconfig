@@ -1,55 +1,60 @@
 [user]
-    name = Tim Chen
-    email = chengt@gmail.com
+  name = Tim Chen
+  email = chengt@gmail.com
 
 [core]
-    excludesfile = ~/.gitignore
+  excludesfile = ~/.gitignore
 
 [alias]
-    l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 
   # I like using the interactive mode to make complex commits
-    ai = add --interactive
+  ai = add --interactive
 
   # modified from http://www.metacircus.com/hacking/2011/02/18/play-git-like-a-violin.html
-    c = commit
-    cm = commit -m
-    cma = commit -a -m
+  c = commit
+  cm = commit -m
+  cma = commit -a -m
   # amending the previous commit
-    ca = commit --amend
-    caa = commit -a --amend -C HEAD
+  ca = commit --amend
+  caa = commit -a --amend -C HEAD
 
   # reset
   ## soft resets
-    r = reset
+  r = reset
   ## hard resets
-    rh = reset --hard
+  rh = reset --hard
 
   # shortcuts for commands
-    s = status
-    d = diff
-    a = add
-    m = merge
-    co = checkout
-    b = branch
-    f = fetch
-    rb = rebase
-    p = pull
-    ph = push
+  s = status
+  d = diff
+  a = add
+  m = merge
+  co = checkout
+  b = branch
+  f = fetch
+  rb = rebase
+  p = pull
+  ph = push
 
 [color]
-    ui = auto
-[color "branch"]
-    current = yellow reverse
-    local = yellow
-    remote = green
-[color "diff"]
-    meta = yellow bold
-    frag = magenta bold
-    old = red bold
-    new = green bold
-[color "status"]
-    added = yellow
-    changed = green
-    untracked = cyan
+  ui = auto
 
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
+
+[push]
+  default = upstream
