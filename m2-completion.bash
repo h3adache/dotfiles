@@ -7,10 +7,10 @@ _mvn()
   verify install deploy test-compile site generate-sources \
   process-sources generate-resources process-resources \
   idea:idea -DartifactId= -DgroupId= -DskipTests \
-  -DarchetypeArtifactId= \
+  -DarchetypeArtifactId= -Dverbose \
   jetty:run exec:java exec:exec \
   migration:new migration:up migration:down -Dmigration.description= \
-  dependency:analyze dependency:resolve \
+  dependency:analyze dependency:resolve dependency:tree \
   versions:display-dependency-updates versions:display-plugin-updates \
   javadoc:aggregate javadoc:aggregate-jar \
   source:aggregate"
