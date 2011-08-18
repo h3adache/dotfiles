@@ -331,7 +331,7 @@ __mvnphases="${__mvndefault_phases} ${__mvnclean_phases} ${__mvnsite_phases}"
 __mvnall_plugin_and_goals="${__mvncore_plugins} ${__mvnpackaging_plugins} ${__mvnreporting_plugins} ${__mvntools_plugins} 
   ${__mvnide_plugins} ${__mvnother_plugins} ${__mvncustom_plugins}"
 
-__mvnplugins=$(echo ${__mvnall_plugin_and_goals} | sed -re 's/:[^ \t]+/:\n/g' | sort -u | sed 's/[\s\n]//g')
+__mvnplugins=$(echo ${__mvnall_plugin_and_goals} | sed -e 's/:[^ \t]+/:\n/g' | sort -u | sed 's/[\s\n]//g')
 
 __mvncomp_1 ()
 {
