@@ -23,6 +23,6 @@ export EDITOR=/usr/bin/vi
 
 export MAVEN_OPTS="-Xmx1024m -XX:MaxPermSize=256m"
 
-export PATH=$HOME/bin:$M2:$PATH
+export PATH=$JAVA_HOME/bin:$HOME/bin:$M2:$PATH
 
 complete -o default -o nospace -F _git g

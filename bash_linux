@@ -3,3 +3,6 @@ export JAVA_HOME='/usr/lib/jvm/java-6-sun'
 
 export M2_HOME=$HOME/opt/maven
 export M2=$M2_HOME/bin
+
+export IDEA_HOME=$HOME/opt/idea
+export PATH=$PATH:$IDEA_HOME/bin
