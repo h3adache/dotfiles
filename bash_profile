@@ -1,5 +1,5 @@
 export CHECKOUT=.dotfiles
-export PATH=$PATH:/usr/local/bin
+export PATH=/usr/local/bin:$PATH
 
 unamestr=`uname`
 if [[ "$unamestr" == 'Linux' ]]; then
