@@ -1,4 +1,4 @@
-export CHECKOUT=.dotfiles
+export CHECKOUT=.dotfiles/bash
 export PATH=/usr/local/bin:$PATH
 
 unamestr=`uname`
