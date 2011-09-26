@@ -11,7 +11,7 @@ fi
 [ -r ${BC_PREFIX}/etc/bash_completion ] && . ${BC_PREFIX}/etc/bash_completion
 
 [ -r ~/${CHECKOUT}/colors ] && . ~/${CHECKOUT}/colors
-[ -r ~/${CHECKOUT}/functions ] && . ~/${CHECKOUT}/functions
+[ -r ~/${CHECKOUT}/bash_functions ] && . ~/${CHECKOUT}/bash_functions
 [ -r ~/${CHECKOUT}/bash_aliases ] && . ~/${CHECKOUT}/bash_aliases
 [ -r ~/${CHECKOUT}/bash_completions ] && . ~/${CHECKOUT}/bash_completions
 [ -r ~/${CHECKOUT}/bash_colors ] && . ~/${CHECKOUT}/bash_colors
