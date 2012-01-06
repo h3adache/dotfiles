@@ -35,6 +35,7 @@
   f = fetch
   rb = rebase
   p = pull
+  pr = pull --rebase
   ph = push
 
 [color]
