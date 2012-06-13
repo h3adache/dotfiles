@@ -63,3 +63,5 @@
 [branch]
   autosetupmerge = always
   autosetuprebase = always
+[commit]
+	template = /Users/tchen/.gitmessage
