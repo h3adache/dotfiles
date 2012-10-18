@@ -15,8 +15,8 @@
   c = commit
   cm = commit -m
   cma = commit -a -m
+  ca = commit -a
   # amending the previous commit
-  ca = commit --amend
   caa = commit -a --amend -C HEAD
 
   # reset
@@ -63,5 +63,6 @@
 [branch]
   autosetupmerge = always
   autosetuprebase = always
+
 [commit]
-	template = /Users/tchen/.gitmessage
+	template = ~/.dotfiles/.gitmessage
