@@ -1,68 +1,71 @@
 [user]
-  name = Tim Chen
-  email = chengt@gmail.com
+    name = Tim Chen
+    email = chengt@gmail.com
 
 [core]
-  excludesfile = ~/.gitignore
+    excludesfile = ~/.gitignore
+    editor = vim
+    pager = less -F -X
 
 [alias]
-  l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 
-  # I like using the interactive mode to make complex commits
-  ai = add --interactive
+# I like using the interactive mode to make complex commits
+    ai = add --interactive
 
-  # modified from http://www.metacircus.com/hacking/2011/02/18/play-git-like-a-violin.html
-  c = commit
-  cm = commit -m
-  cma = commit -a -m
-  ca = commit -a
-  # amending the previous commit
-  caa = commit -a --amend -C HEAD
+# modified from http://www.metacircus.com/hacking/2011/02/18/play-git-like-a-violin.html
+    c = commit
+    cm = commit -m
+    cma = commit -a -m
+    ca = commit -a
+# amending the previous commit
+    caa = commit -a --amend -C HEAD
 
-  # reset
-  ## soft resets
-  r = reset
-  ## hard resets
-  rh = reset --hard
+# reset
+## soft resets
+    r = reset
+## hard resets
+    rh = reset --hard
 
-  # shortcuts for commands
-  s = status
-  d = diff
-  a = add
-  m = merge
-  co = checkout
-  b = branch
-  f = fetch
-  rb = rebase
-  p = pull
-  pr = pull --rebase
-  ph = push
+# shortcuts for commands
+    s = status
+    d = diff
+    a = add
+    m = merge
+    co = checkout
+    b = branch
+    f = fetch
+    rb = rebase
+    p = pull
+    pr = pull --rebase
+    ph = push
+    unstage = reset HEAD
 
 [color]
-  ui = auto
+	ui = on
 
 [color "branch"]
-  current = yellow reverse
-  local = yellow
-  remote = green
+    current = yellow reverse
+    local = yellow
+    remote = green
 
 [color "diff"]
-  meta = yellow bold
-  frag = magenta bold
-  old = red bold
-  new = green bold
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
 
 [color "status"]
-  added = yellow
-  changed = green
-  untracked = cyan
+    added = yellow
+    changed = green
+    untracked = cyan
 
 [push]
-  default = tracking
+    default = tracking
 
 [branch]
-  autosetupmerge = always
-  autosetuprebase = always
+    autosetupmerge = always
+    autosetuprebase = always
 
 [commit]
 	template = ~/.dotfiles/.gitmessage
