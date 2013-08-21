@@ -1,1 +1,0 @@
-[ -r ~/.dotfiles/m2-completion.bash ] && . ~/.dotfiles/m2-completion.bash

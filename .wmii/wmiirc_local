@@ -1,0 +1,58 @@
+#!/bin/dash -f
+
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+export LANGUAGE=en_US
+
+xrdb -load ~/.Xdefaults
+
+# Should be default now but wahtever
+MODKEY=Mod4
+UP=j
+DOWN=k
+LEFT=h
+RIGHT=l
+
+# Status Bar Info
+status() {
+	echo -n $(whoami)@$(hostname) '|' $(uptime | sed 's/.*://; s/,//g') '|' $(date)
+}
+
+# from http://amychr.wordpress.com/tag/themes/
+# DeviantArt-like
+export WMII_BACKGROUND='#c7d2c2'
+export WMII_NORMCOLORS='#ffffff #576862 #47584e'
+export WMII_FOCUSCOLORS='#2e3732 #819742 #c0cf4e'
+export WMII_URGENTCOLORS='#2e3732 #b5c33a #b5c33a'
+export WMII_BARCOLORS='#2e3732 #d2ded2 #bfcb8d'
+
+export WMII_TERM="uxterm"
+export WMII_BROWSER="google-chrome"
+export WMII_INTELLIJ="idea"
+export WMII_ECLIPSE="eclipse"
+export WMII_NETBEANS="netbeans"
+
+wmiir xwrite /ctl bar on top
+wmiir xwrite /ctl colmode default
+
+local_events() {
+	cat <<EOL
+Key $MODKEY-b # Launch a browser
+	eval wmiir setsid $WMII_BROWSER &
+Key $MODKEY-i # Launch IntelliJ
+	eval wmiir setsid $WMII_INTELLIJ &
+Key $MODKEY-e # Launch eclipse
+	eval wmiir setsid $WMII_ECLIPSE &
+Key $MODKEY-n # Launch eclipse
+	eval wmiir setsid $WMII_NETBEANS &
+
+Key $MODKEY-Control-$LEFT
+        wmiir xwrite /tag/sel/ctl grow sel sel right -1 &
+Key $MODKEY-Control-$RIGHT
+        wmiir xwrite /tag/sel/ctl grow sel sel right 1 &
+Key $MODKEY-Control-$DOWN
+        wmiir xwrite /tag/sel/ctl grow sel sel down 1 &
+Key $MODKEY-Control-$UP
+        wmiir xwrite /tag/sel/ctl grow sel sel down -1 &
+EOL
+}

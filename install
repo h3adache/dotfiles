@@ -1,0 +1,23 @@
+#!/usr/bin/ruby
+
+def linkit(target, linkname)
+    puts "linking #{target}"
+    `ln -sfvn #{target} #{linkname}`
+end
+
+require 'fileutils'
+include FileUtils
+
+install_dir = Dir.pwd
+user_home = File.expand_path('~')
+
+cd(user_home)
+puts pwd()
+
+linkit("#{install_dir}/.wmii", user_home)
+linkit("#{install_dir}/.vimrc", user_home)
+
+Dir.glob("#{install_dir}/.gitfiles/.git*") do |item|
+    linkit(item, user_home)
+end
+
