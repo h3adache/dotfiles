@@ -14,8 +14,10 @@ user_home = File.expand_path('~')
 cd(user_home)
 puts pwd()
 
+linkit("#{install_dir}/.Xdefaults", user_home)
 linkit("#{install_dir}/.wmii", user_home)
 linkit("#{install_dir}/.vimrc", user_home)
+linkit("#{install_dir}/.ssh/config", "#{user_home}/.ssh/config")
 
 Dir.glob("#{install_dir}/.gitfiles/.git*") do |item|
     linkit(item, user_home)
