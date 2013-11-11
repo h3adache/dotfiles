@@ -16,9 +16,14 @@ puts pwd()
 
 linkit("#{install_dir}/.Xdefaults", user_home)
 # linkit("#{install_dir}/.wmii", user_home)
-linkit("#{install_dir}/.xmonad", user_home)
 linkit("#{install_dir}/.vimrc", user_home)
 linkit("#{install_dir}/.ssh/config", "#{user_home}/.ssh/config")
+
+# for xmonad
+linkit("#{install_dir}/.xmonad", user_home)
+puts "Run as sudo"
+puts "cp ~/.dotfiles /usr/bin/gnome-session-xmonad"
+puts "cp ~/.dotfiles/xmonad.session /usr/share/gnome-session/sessions/xmonad.session"
 
 Dir.glob("#{install_dir}/.gitfiles/.git*") do |item|
     linkit(item, user_home)
