@@ -9,8 +9,8 @@ require 'fileutils'
 include FileUtils
 
 # establish sudo
-puts "establishing sudo rights"
-`sudo -v`
+# puts "establishing sudo rights"
+# `sudo -v`
 
 install_dir = Dir.pwd
 user_home = File.expand_path('~')
