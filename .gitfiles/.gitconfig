@@ -62,7 +62,7 @@
     untracked = cyan
 
 [push]
-    default = tracking
+    default = upstream
 
 [branch]
     autosetupmerge = always
