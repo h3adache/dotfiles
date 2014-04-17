@@ -69,4 +69,4 @@
     autosetuprebase = always
 
 [commit]
-    template = ~/.dotfiles/.gitmessage
+    template = ~/.gitmessage
