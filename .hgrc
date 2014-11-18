@@ -1,0 +1,65 @@
+[ui]
+username = $HG_USERNAME
+editor = vim
+merge = meld
+style = compact
+
+[extensions]
+color =
+extdiff =
+graphlog =
+histedit =
+mercurial_keyring =
+mq =
+pager =
+progress =
+purge =
+rebase =
+record =
+
+[diff]
+git = True
+
+[extdiff]
+vdiff = meld
+
+[color]
+status.modified = cyan
+status.added = green
+status.removed = red
+status.deleted = yellow bold
+status.unknown = magenta bold
+status.ignored = blue bold
+diff.diffline = none
+diff.extended = cyan
+diff.file_a = red
+diff.file_b = green
+diff.hunk = yellow bold
+diff.deleted = red
+diff.inserted = green
+diff.changed = white
+diff.trailingwhitespace = white_background
+
+[bookmarks]
+track.current = True
+
+[pager]
+pager = LESS='FRX' less
+
+[alias]
+s = status -SC
+su = summary
+l = log --template '{rev}:{node|short} {author|user} {desc|firstline} ({date|age})\n'
+sl = l -l 10
+ll = l -l 100
+gl = sl -G
+gll = ll -G -l 100
+cm = commit -m
+d = diff -p --color=auto
+i = incoming -G
+o = outgoing -G
+nudge = push --rev .
+change = status --change
+print = l -p
+pr = pull -b . --rebase
+ph = push -b .
