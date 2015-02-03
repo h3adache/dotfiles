@@ -1,5 +1,5 @@
 [ui]
-username = $HG_USERNAME
+username = Tim Chen <tchen@allstontrading.com>
 editor = vim
 merge = meld
 style = compact
@@ -24,12 +24,35 @@ git = True
 vdiff = meld
 
 [color]
+mode = terminfo
+
+#Custom colours
+color.orange = 202
+color.lightyellow = 191
+color.darkorange = 220
+color.brightyellow = 226
+
+#Colours for each label
+log.branch = cyan 
+log.summary = lightyellow
+log.description = lightyellow
+log.bookmark = green
+log.tag = darkorange
+log.graph = blue
+
+changeset.public=orange bold
+changeset.secret=blue bold
+changeset.draft=brightyellow bold
+
+desc.here=bold
+
 status.modified = cyan
 status.added = green
 status.removed = red
 status.deleted = yellow bold
 status.unknown = magenta bold
 status.ignored = blue bold
+
 diff.diffline = none
 diff.extended = cyan
 diff.file_a = red
@@ -44,22 +67,44 @@ diff.trailingwhitespace = white_background
 track.current = True
 
 [pager]
-pager = LESS='FRX' less
+pager = less -FRX
+
+[revsetalias]
+wip = (parents(not public()) or not public() or . or head()) and (not obsolete() or unstable()^) and not closed()
+
+[templates]
+wip = '{label("log.branch", branches)} {label("changeset.{phase}", "{rev}:{node|short}")} {label("grep.user", author|user)}{label("log.tag", if(tags," {tags}"))} {label("log.bookmark", if(bookmarks," {bookmarks}"))}  {label(ifcontains(rev, revset('.'), 'desc.here'),desc|firstline)}\n'
+log = '{label("changeset.{phase}", "{rev}:{node|short}")} {label("grep.user", author|user)} {label("log.bookmark", if(bookmarks," {bookmarks}"))} {desc|firstline} ({date|age})\n'
 
 [alias]
-s = status -SC
-su = summary
-l = log --template '{rev}:{node|short} {author|user} {desc|firstline} ({date|age})\n'
-sl = l -l 10
-ll = l -l 100
-gl = sl -G
-gll = ll -G -l 100
+# modifying
+ca = commit --amend
 cm = commit -m
-d = diff -p --color=auto
-i = incoming -G
-o = outgoing -G
 nudge = push --rev .
-change = status --change
-print = l -p
+p = pull
 pr = pull -b . --rebase
 ph = push -b .
+rb = rebase
+
+# status/diffs
+s = status -SC
+su = summary
+i = incoming -G
+o = outgoing -G
+d = diff -p --color on --pager on
+change = status --change
+
+# branching/bookmarking
+b = branch
+bs = branches
+bm = bookmark
+bms = bookmarks
+
+# logging
+l = log --template log --pager on
+ll = l -l 100
+print = l -p
+sl = l -l 10
+gl = sl -G
+gll = ll -G -l 100
+wip = log -G --template wip --rev wip --pager on
