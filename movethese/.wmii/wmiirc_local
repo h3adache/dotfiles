@@ -18,15 +18,11 @@ status() {
 	echo -n $(whoami)@$(hostname) '|' $(uptime | sed 's/.*://; s/,//g') '|' $(date)
 }
 
-# from http://amychr.wordpress.com/tag/themes/
-# DeviantArt-like
-export WMII_BACKGROUND='#c7d2c2'
-export WMII_NORMCOLORS='#ffffff #576862 #47584e'
-export WMII_FOCUSCOLORS='#2e3732 #819742 #c0cf4e'
-export WMII_URGENTCOLORS='#2e3732 #b5c33a #b5c33a'
-export WMII_BARCOLORS='#2e3732 #d2ded2 #bfcb8d'
+export WMII_FOCUSCOLORS='#ffffff #282828 #cccccc'
+export WMII_BACKGROUND='#333333'
+export WMII_NORMCOLORS='#e0e0e0 #0a0a0a #606060'
 
-export WMII_TERM="uxterm"
+export WMII_TERM="urxvt"
 export WMII_BROWSER="google-chrome"
 export WMII_INTELLIJ="idea"
 export WMII_ECLIPSE="eclipse"
@@ -45,6 +41,11 @@ Key $MODKEY-e # Launch eclipse
 	eval wmiir setsid $WMII_ECLIPSE &
 Key $MODKEY-n # Launch eclipse
 	eval wmiir setsid $WMII_NETBEANS &
+
+Key XF86AudioRaiseVolume
+    amixer -c 0 set Master 2%+
+Key XF86AudioLowerVolume
+    amixer -c 0 set Master 2%-
 
 Key $MODKEY-Control-$LEFT
         wmiir xwrite /tag/sel/ctl grow sel sel right -1 &
