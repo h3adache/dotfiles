@@ -1,7 +1,7 @@
 [ui]
 username = Tim Chen <tchen@allstontrading.com>
 editor = vim
-merge = meld
+merge = internal:merge
 style = compact
 
 [extensions]
