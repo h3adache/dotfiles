@@ -16,6 +16,7 @@ progress =
 purge =
 rebase =
 record =
+hgext.convert=
 
 [diff]
 git = True
