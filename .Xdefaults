@@ -4,7 +4,7 @@
 !-------------------------------------------------------------------------------
 
 ! uxterm*faceName: xft:DejaVu Sans Mono
-! URxvt*faceName: xft:DejaVu Sans Mono
+URxvt*faceName: xft:DejaVu Sans Mono
 ! XTerm*faceName: xft:DejaVu Sans Mono
 ! xterm*utf8: true
 
