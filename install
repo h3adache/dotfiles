@@ -1,25 +1,22 @@
 #!/usr/bin/ruby
-
-def linkit(target, linkname)
-    puts "linking #{target}"
-    `ln -sfvn #{target} #{linkname}`
-end
-
 require 'fileutils'
 include FileUtils
 
-install_dir = Dir.pwd
+install_dir = "#{Dir.pwd}/installs"
 user_home = File.expand_path('~')
 
 cd(user_home)
-puts pwd()
 
-linkit("#{install_dir}/x/.Xdefaults", user_home)
-linkit("#{install_dir}/vim/.vimrc", user_home)
-Dir.glob("#{install_dir}/git/.git*") do |item|
-    linkit(item, user_home)
-end
-Dir.glob("#{install_dir}/hg/.git*") do |item|
-    linkit(item, user_home)
+# FileUtils.ln_sf("#{install_dir}/x/*", user_home)
+# linkit("#{install_dir}/x/.Xdefaults", user_home)
+install_files = Dir.glob("#{install_dir}/**/*", File::FNM_DOTMATCH).reject{ |f| f.end_with? '.' }
+install_files.each do |item|
+    if File.file? item
+	 FileUtils.ln_sf(item, user_home, :verbose => true)
+    end
 end
 
+zgen = "#{user_home}/.zgen"
+if !File.directory?(zgen)
+    `git clone https://github.com/tarjoilija/zgen.git #{zgen}`
+end
