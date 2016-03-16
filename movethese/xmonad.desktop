@@ -1,7 +1,0 @@
-[Desktop Entry]
-Type=Application
-Encoding=UTF-8
-Name=xmonad
-Exec=xmonad
-NoDisplay=true
-Terminal=false

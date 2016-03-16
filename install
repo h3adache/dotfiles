@@ -8,29 +8,18 @@ end
 require 'fileutils'
 include FileUtils
 
-# establish sudo
-# puts "establishing sudo rights"
-# `sudo -v`
-
 install_dir = Dir.pwd
 user_home = File.expand_path('~')
 
 cd(user_home)
 puts pwd()
 
-linkit("#{install_dir}/.Xdefaults", user_home)
-# linkit("#{install_dir}/.wmii", user_home)
-linkit("#{install_dir}/.vimrc", user_home)
-linkit("#{install_dir}/.ssh/config", "#{user_home}/.ssh/config")
-
-# for xmonad - @todo - skip if not linux
-# linkit("#{install_dir}/.xmonad", user_home)
-# puts "Copying xmonad files"
-# `sudo cp #{install_dir}/xmonad.desktop /usr/share/applications/xmonad.desktop`
-# `sudo cp #{install_dir}/gnome-session-xmonad /usr/bin/gnome-session-xmonad`
-# `sudo cp #{install_dir}/xmonad.session /usr/share/gnome-session/sessions/xmonad.session`
-
-Dir.glob("#{install_dir}/.gitfiles/.git*") do |item|
+linkit("#{install_dir}/x/.Xdefaults", user_home)
+linkit("#{install_dir}/vim/.vimrc", user_home)
+Dir.glob("#{install_dir}/git/.git*") do |item|
+    linkit(item, user_home)
+end
+Dir.glob("#{install_dir}/hg/.git*") do |item|
     linkit(item, user_home)
 end
 
