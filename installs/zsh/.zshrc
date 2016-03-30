@@ -1,5 +1,7 @@
-export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+export LANGUAGE=en_US
+
 export PATH=$HOME/bin:$HOME/.local/bin:$PATH
 
 # load zgen
@@ -19,4 +21,12 @@ if ! zgen saved; then
 
     zgen load zsh-users/zsh-completions src
     zgen save
+fi
+
+
+PLATFORM=$(uname | tr '[:upper:]' '[:lower:]')
+PLATFORM_CONFIG="${ZDOTDIR:-$HOME}/.zshrc.${PLATFORM}"
+
+if [[ -s "${PLATFORM_CONFIG}" ]]; then
+    source "${PLATFORM_CONFIG}"
 fi

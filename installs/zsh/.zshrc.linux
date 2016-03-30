@@ -1,0 +1,10 @@
+# Linux specific config
+
+export JAVA_HOME=/usr/java/jdk1.6.0_45
+export IDEA_JDK=$HOME/opt/java/jdk8
+export JRE_HOME=$HOME/opt/java/jdk8
+
+export TERM="xterm-256color"
+export MVN_HOME=$HOME/opt/maven
+
+export PATH=$JAVA_HOME/bin:$MVN_HOME/bin:$PATH
