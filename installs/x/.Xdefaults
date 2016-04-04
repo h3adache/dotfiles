@@ -4,7 +4,7 @@
 !-------------------------------------------------------------------------------
 
 ! uxterm*faceName: xft:DejaVu Sans Mono
-URxvt*faceName: xft:DejaVu Sans Mono
+URxvt.font: xft:Ubuntu Mono:size=11,xft:Monospace:size=9:antialias=true:hinting=true
 ! XTerm*faceName: xft:DejaVu Sans Mono
 ! xterm*utf8: true
 
