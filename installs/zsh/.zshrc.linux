@@ -1,6 +1,6 @@
 # Linux specific config
 
-export JAVA_HOME=/usr/java/jdk1.6.0_45
+export JAVA_HOME=/usr/java/jdk7
 export IDEA_JDK=$HOME/opt/java/jdk8
 export JRE_HOME=$HOME/opt/java/jdk8
 
