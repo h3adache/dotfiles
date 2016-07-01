@@ -23,6 +23,7 @@ if ! zgen saved; then
     zgen save
 fi
 
+alias ls="ls --color=auto"
 
 PLATFORM=$(uname | tr '[:upper:]' '[:lower:]')
 PLATFORM_CONFIG="${ZDOTDIR:-$HOME}/.zshrc.${PLATFORM}"
