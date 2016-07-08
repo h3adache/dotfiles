@@ -1,4 +1,7 @@
 # Darwin specific config
 
 export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)
+export IDEA_JDK=$(/usr/libexec/java_home -v 1.8)
+export JRE_HOME=$(/usr/libexec/java_home -v 1.8)
+
 export PATH=$JAVA_HOME/bin:$PATH
