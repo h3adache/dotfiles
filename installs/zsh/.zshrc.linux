@@ -1,10 +1,13 @@
 # Linux specific config
 
-export JAVA_HOME=/usr/java/jdk7
-export IDEA_JDK=$HOME/opt/java/jdk8
-export JRE_HOME=$HOME/opt/java/jdk8
+export JAVA_HOME=/usr/java/jdk8
+export IDEA_JDK=/usr/java/jdk8
+export JRE_HOME=/usr/java/jdk8
 
 # export TERM="xterm-256color"
 export MVN_HOME=$HOME/opt/maven
 
 export PATH=$JAVA_HOME/bin:$MVN_HOME/bin:$PATH
+export PATH="/home/tchen/.linuxbrew/bin:$PATH"
+export MANPATH="/home/tchen/.linuxbrew/share/man:$MANPATH"
+export INFOPATH="/home/tchen/.linuxbrew/share/info:$INFOPATH"
