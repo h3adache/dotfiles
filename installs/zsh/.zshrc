@@ -31,3 +31,5 @@ PLATFORM_CONFIG="${ZDOTDIR:-$HOME}/.zshrc.${PLATFORM}"
 if [[ -s "${PLATFORM_CONFIG}" ]]; then
     source "${PLATFORM_CONFIG}"
 fi
+
+export PATH="$HOME/.yarn/bin:$PATH"

@@ -110,3 +110,8 @@ sl = l -l 10
 gl = sl -G
 gll = ll -G -l 100
 wip = log -G --template wip --rev wip --pager on
+
+[auth]
+default.schemes = http https
+default.prefix = mercurial-ch-01:5002/scm/hg
+default.username = tchen
