@@ -1,7 +1,11 @@
 # Darwin specific config
 
-export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 export IDEA_JDK=$(/usr/libexec/java_home -v 1.8)
 export JRE_HOME=$(/usr/libexec/java_home -v 1.8)
 
-export PATH=$JAVA_HOME/bin:$PATH
+export TEX_PATH=/Library/TeX/Root/bin/x86_64-darwin:/Library/TeX/Root/bin/universal-darwin
+export PATH="$TEX_PATH:$JAVA_HOME/bin:$PATH:`yarn global bin`"
+
+# some simple aliases
+alias ls='ls -G'
