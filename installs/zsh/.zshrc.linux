@@ -1,8 +1,8 @@
 # Linux specific config
 
-export JAVA_HOME=/usr/java/jdk8
-export IDEA_JDK=/usr/java/jdk8
-export JRE_HOME=/usr/java/jdk8
+export JAVA_HOME=/usr/java/jdk1.8.0_131
+export IDEA_JDK=/usr/java/jdk1.8.0_131
+export JRE_HOME=/usr/java/jdk1.8.0_131
 
 # export TERM="xterm-256color"
 export MVN_HOME=$HOME/opt/maven

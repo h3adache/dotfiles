@@ -16,8 +16,10 @@ progress =
 purge =
 rebase =
 record =
-hgext.convert=
-shelve=
+hgext.convert =
+shelve =
+hgext.bookmarks =
+hggit = /home/tchen/opt/hg-git/hggit
 
 [diff]
 git = True
