@@ -2,7 +2,7 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export LANGUAGE=en_US
 
-export PATH=$HOME/bin:$HOME/.local/bin:$PATH
+export PATH=${HOME}/bin:$HOME/.local/bin:${PATH}
 
 # load zgen
 source "${HOME}/.zgen/zgen.zsh"
@@ -30,4 +30,8 @@ if [[ -s "${PLATFORM_CONFIG}" ]]; then
     source "${PLATFORM_CONFIG}"
 fi
 
-export PATH="$HOME/.yarn/bin:$PATH"
+export PATH="${HOME}/.yarn/bin:${PATH}"
+
+if [[ -s "${HOME}/.zshrc.work" ]]; then
+    source "${HOME}/.zshrc.work"
+fi
