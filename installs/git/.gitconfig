@@ -1,6 +1,6 @@
 [user]
     name = Tim Chen
-	email = tchen@allstontrading.com
+	email = chengt@gmail.com
 
 [core]
     excludesfile = ~/.gitignore
@@ -70,5 +70,3 @@
 
 [commit]
     template = ~/.gitmessage
-[http]
-	sslVerify = false
