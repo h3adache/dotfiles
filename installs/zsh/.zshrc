@@ -22,6 +22,15 @@ if [[ -s "${PLATFORM_CONFIG}" ]]; then
     source "${PLATFORM_CONFIG}"
 fi
 
-if [[ -s "${HOME}/.zshrc.work" ]]; then
-    source "${HOME}/.zshrc.work"
+if [[ -s "${HOME}/.zshrc.local" ]]; then
+    source "${HOME}/.zshrc.local"
 fi
+
+if [ -d "${HOME}/.zshrc.d" ]; then
+  for file in ${HOME}/.zshrc.d/*.zsh; do
+    echo "sourcing ${file}"
+    source $file
+  done
+fi
+
+export PATH="${HOME}/bin:${PATH}"
