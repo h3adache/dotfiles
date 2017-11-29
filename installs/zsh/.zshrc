@@ -13,7 +13,7 @@ if ! zplug check --verbose; then
   fi
 fi
 
-zplug load --verbose
+zplug load # --verbose
 
 PLATFORM=$(uname | tr '[:upper:]' '[:lower:]')
 PLATFORM_CONFIG="${ZDOTDIR:-$HOME}/.zshrc.${PLATFORM}"
@@ -28,9 +28,8 @@ fi
 
 if [ -d "${HOME}/.zshrc.d" ]; then
   for file in ${HOME}/.zshrc.d/*.zsh; do
-    echo "sourcing ${file}"
     source $file
   done
 fi
 
-export PATH="${HOME}/bin:${PATH}"
+export PATH="${HOME}/bin:${HOME}/.local/bin:${PATH}"
