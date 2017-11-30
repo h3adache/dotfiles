@@ -3,7 +3,7 @@ source ~/.zplug/init.zsh
 
 zplug "zplug/zplug"
 zplug "zsh-users/zsh-completions", defer:3
-zplug 'themes/af-magic', from:oh-my-zsh
+zplug "h3adache/zsh", as:theme
 
 if ! zplug check --verbose; then
   printf "Install? [y/N]: "
