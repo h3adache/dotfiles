@@ -16,7 +16,7 @@ install_files.each do |item|
     end
 end
 
-zgen = "#{user_home}/.zgen"
-if !File.directory?(zgen)
-    `git clone https://github.com/tarjoilija/zgen.git #{zgen}`
+zplug = "#{user_home}/.zplug"
+if !File.directory?(zplug)
+    `git clone https://github.com/zplug/zplug #{zplug}`
 end
