@@ -5,7 +5,4 @@ export IDEA_JDK=$(/usr/libexec/java_home -v 1.8)
 export JRE_HOME=$(/usr/libexec/java_home -v 1.8)
 
 export TEX_PATH=/Library/TeX/Root/bin/x86_64-darwin:/Library/TeX/Root/bin/universal-darwin
-export PATH="/usr/local/sbin:$TEX_PATH:$JAVA_HOME/bin:$PATH:`yarn global bin`"
-
-# some simple aliases
-alias ls='ls -G'
+export PATH="/usr/local/sbin:$TEX_PATH:$JAVA_HOME/bin:$PATH"
