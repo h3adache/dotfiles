@@ -2,7 +2,10 @@ export ZPLUG_HOME=${HOME}/.zplug
 source ~/.zplug/init.zsh
 
 zplug "zplug/zplug"
-zplug "zsh-users/zsh-completions", defer:3
+zplug "zsh-users/zsh-history-substring-search"
+zplug "zsh-users/zsh-completions"
+zplug "plugins/command-not-found", from:oh-my-zsh, as:plugin
+zplug "${HOME}/.zshrc.d", from:local
 zplug "h3adache/zsh", as:theme
 
 if ! zplug check --verbose; then
@@ -18,6 +21,7 @@ zplug load # --verbose
 export HISTFILE=${HOME}/.zsh_history
 export HISTSIZE=100000
 export SAVEHIST=${HISTSIZE}
+
 setopt SHARE_HISTORY # share history between all sessions
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_SAVE_NO_DUPS
@@ -29,16 +33,6 @@ PLATFORM_CONFIG="${ZDOTDIR:-$HOME}/.zshrc.${PLATFORM}"
 
 if [[ -s "${PLATFORM_CONFIG}" ]]; then
     source "${PLATFORM_CONFIG}"
-fi
-
-if [[ -s "${HOME}/.zshrc.local" ]]; then
-    source "${HOME}/.zshrc.local"
-fi
-
-if [ -d "${HOME}/.zshrc.d" ]; then
-  for file in ${HOME}/.zshrc.d/*.zsh; do
-    source $file
-  done
 fi
 
 export PATH="${HOME}/bin:${HOME}/.local/bin:${PATH}"
