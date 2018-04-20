@@ -7,7 +7,8 @@ user_home = File.expand_path('~')
 
 cd(user_home)
 
-# FileUtils.ln_sf("#{install_dir}/x/*", user_home)
+FileUtils.ln_sf("#{install_dir}/zsh/.zshrc.d", user_home)
+
 # linkit("#{install_dir}/x/.Xdefaults", user_home)
 install_files = Dir.glob("#{install_dir}/**/*", File::FNM_DOTMATCH).reject{ |f| f.end_with? '.' }
 install_files.each do |item|
