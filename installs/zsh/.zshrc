@@ -8,13 +8,6 @@ zplug "plugins/command-not-found", from:oh-my-zsh, as:plugin
 zplug "${HOME}/.zshrc.d", from:local
 zplug "h3adache/zsh", as:theme
 
-if ! zplug check --verbose; then
-  printf "Install? [y/N]: "
-  if read -q; then
-    echo; zplug install
-  fi
-fi
-
 zplug load # --verbose
 
 # zsh history preferences
