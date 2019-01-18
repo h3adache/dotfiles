@@ -1,11 +1,16 @@
 export ZPLUG_HOME=${HOME}/.zplug
 source ~/.zplug/init.zsh
 
-zplug "zplug/zplug"
+zplug "zplug/zplug", hook-build:'zplug --self-manage'
+
+zplug "plugins/aws", from:oh-my-zsh
+
 zplug "zsh-users/zsh-history-substring-search"
 zplug "zsh-users/zsh-completions"
-zplug "plugins/command-not-found", from:oh-my-zsh, as:plugin
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
+
 zplug "${HOME}/.zshrc.d", from:local
+
 zplug "h3adache/zsh", as:theme
 
 zplug load # --verbose
@@ -20,6 +25,7 @@ setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_SAVE_NO_DUPS
 setopt INC_APPEND_HISTORY # write to history file immediately
 setopt EXTENDED_HISTORY # history with start time and elapsed time
+setopt NO_CASE_MATCH
 
 PLATFORM=$(uname | tr '[:upper:]' '[:lower:]')
 PLATFORM_CONFIG="${ZDOTDIR:-$HOME}/.zshrc.${PLATFORM}"
@@ -27,5 +33,7 @@ PLATFORM_CONFIG="${ZDOTDIR:-$HOME}/.zshrc.${PLATFORM}"
 if [[ -s "${PLATFORM_CONFIG}" ]]; then
     source "${PLATFORM_CONFIG}"
 fi
+
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
 
 export PATH="${HOME}/bin:${HOME}/.local/bin:${PATH}"

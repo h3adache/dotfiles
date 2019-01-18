@@ -18,14 +18,15 @@
 # modified from http://www.metacircus.com/hacking/2011/02/18/play-git-like-a-violin.html
     c = commit
     cm = commit -m
-    cma = commit -a -m
     ca = commit -a
+    cam = commit -a -m
+
 # amending the previous commit
     caa = commit -a --amend -C HEAD
 
 # reset
 ## soft resets
-    r = reset
+    rs = reset
 ## hard resets
     rh = reset --hard
 
@@ -36,7 +37,7 @@
     m = merge
     co = checkout
     b = branch
-    f = fetch
+    f = fetch --all -p
     rb = rebase
     p = pull
     pr = pull --rebase
@@ -68,6 +69,9 @@
 [branch]
     autosetupmerge = always
     autosetuprebase = always
+
+[diff]
+    submodule = diff
 
 [commit]
     template = ~/.gitmessage
