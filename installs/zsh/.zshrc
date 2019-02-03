@@ -3,14 +3,10 @@ source ~/.zplug/init.zsh
 
 zplug "zplug/zplug", hook-build:'zplug --self-manage'
 
-zplug "zsh-users/zsh-history-substring-search"
-zplug "zsh-users/zsh-completions"
-zplug "zsh-users/zsh-syntax-highlighting", defer:2
-
 # completions
 zplug "bazelbuild/bazel", use:scripts/zsh_completion
-zplug "plugins/aws", from:oh-my-zsh
 zplug "plugins/docker", from:oh-my-zsh
+zplug "plugins/terraform", from:oh-my-zsh
 
 zplug "${HOME}/.zshrc.d", from:local
 
@@ -24,7 +20,6 @@ if ! zplug check --verbose; then
 fi
 
 zplug load #--verbose
-fpath[1,0]=~/.zsh/completion/
 
 # zsh history preferences
 export HISTFILE=${HOME}/.zsh_history
@@ -47,6 +42,7 @@ fi
 
 export PATH="${HOME}/bin:${HOME}/.local/bin:${PATH}"
 
+fpath[1,0]=~/.zsh/completion/
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
 
 # This way the completion script does not have to parse Bazel's options
