@@ -1,10 +1,9 @@
 export ZPLUG_HOME=${HOME}/.zplug
-source ~/.zplug/init.zsh
+source ${HOME}/.zplug/init.zsh
 
 zplug "zplug/zplug", hook-build:'zplug --self-manage'
 
 # completions
-zplug "bazelbuild/bazel", use:scripts/zsh_completion
 zplug "plugins/docker", from:oh-my-zsh
 zplug "plugins/terraform", from:oh-my-zsh
 
@@ -40,12 +39,13 @@ if [[ -s "${PLATFORM_CONFIG}" ]]; then
     source "${PLATFORM_CONFIG}"
 fi
 
-export PATH="${HOME}/bin:${HOME}/.local/bin:${PATH}"
-
-fpath[1,0]=~/.zsh/completion/
+fpath[1,0]=${HOME}/.zsh/completion/
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
 
 # This way the completion script does not have to parse Bazel's options
 # repeatedly.  The directory in cache-path must be created manually.
 zstyle ':completion:*' use-cache on
-zstyle ':completion:*' cache-path ~/.zsh/cache
+zstyle ':completion:*' cache-path ${HOME}/.zsh/cache
+
+export GOPATH=${HOME}/go
+export PATH="${HOME}/bin:${GOPATH}/bin:/usr/local/opt/thrift@0.9/bin:/usr/local/opt/gnu-tar/libexec/gnubin:${PATH}"

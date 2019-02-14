@@ -23,6 +23,7 @@
 
 # amending the previous commit
     caa = commit -a --amend -C HEAD
+    amend = commit --amend -C HEAD
 
 # reset
 ## soft resets
