@@ -32,6 +32,7 @@
     rh = reset --hard
 
 # shortcuts for commands
+    t = tag
     s = status
     d = diff
     a = add
