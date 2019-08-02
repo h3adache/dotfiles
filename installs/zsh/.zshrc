@@ -5,6 +5,7 @@ zplug "zplug/zplug", hook-build:'zplug --self-manage'
 # completions
 zplug "plugins/docker", from:oh-my-zsh
 zplug "plugins/yarn", from:oh-my-zsh
+
 zplug "${HOME}/.zshrc.d", from:local
 zplug "h3adache/zsh", as:theme
 
@@ -46,3 +47,6 @@ zstyle ':completion:*' cache-path ${HOME}/.zsh/cache
 export GOPATH=${HOME}/go
 export PATH="${HOME}/bin:${GOPATH}/bin:/usr/local/opt/thrift@0.9/bin:/usr/local/opt/gnu-tar/libexec/gnubin:${PATH}"
 
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/local/bin/terraform terraform
