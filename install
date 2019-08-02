@@ -1,23 +1,19 @@
-#!/usr/bin/ruby
-require 'fileutils'
-include FileUtils
+#!/bin/zsh
 
-install_dir = "#{Dir.pwd}/installs"
-user_home = File.expand_path('~')
+basedir=${0:a:h}
+installdir=${basedir}/installs
 
-cd(user_home)
+# git
+ln -sfvn ${installdir}/git/.git* ~
 
-FileUtils.ln_sf("#{install_dir}/zsh/.zshrc.d", user_home)
+# vim
+ln -sfvn ${installdir}/vim/.vimrc ~
 
-# linkit("#{install_dir}/x/.Xdefaults", user_home)
-install_files = Dir.glob("#{install_dir}/**/*", File::FNM_DOTMATCH).reject{ |f| f.end_with? '.' }
-install_files.each do |item|
-    if File.file? item
-	 FileUtils.ln_sf(item, user_home, :verbose => true)
-    end
-end
+# x
+ln -sfvn ${installdir}/x/.Xdefaults ~
 
-zplug = "#{user_home}/.zplug"
-if !File.directory?(zplug)
-    `git clone https://github.com/zplug/zplug #{zplug}`
-end
+# zsh
+ln -sfvn ${installdir}/zsh/.zsh* ~
+
+# manually install antibody plugins
+antibody bundle < ${basedir}/antibody/plugins > ~/.zplugins

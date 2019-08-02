@@ -1,0 +1,10 @@
+# plugins
+robbyrussell/oh-my-zsh path:plugins/yarn
+docker/cli path:contrib/completion/zsh kind:fpath
+bazelbuild/bazel path:scripts/zsh_completion kind:fpath
+zsh-users/zsh-completions
+zsh-users/zsh-syntax-highlighting
+zsh-users/zsh-history-substring-search
+
+# themes
+dracula/zsh

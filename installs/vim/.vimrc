@@ -1,5 +1,7 @@
 syntax on
 filetype indent plugin on
+set ignorecase
+set smartcase
 set smartindent
 set tabstop=4
 set softtabstop=4
