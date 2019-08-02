@@ -32,6 +32,8 @@ zstyle ':completion:*' accept-exact '*(N)'
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ${HOME}/.zsh/cache
 
+export PATH="${HOME}/bin:${PATH}"
+
 autoload -Uz compinit 
 if [[ -n ${ZDOTDIR:-$HOME}/.zcompdump(#qN.mh+24) ]]; then
 	compinit;
