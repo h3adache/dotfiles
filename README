@@ -1,1 +1,7 @@
-run ./install
+### prereqs
+
+* antibody
+
+### install
+
+run `./install` from checked out root

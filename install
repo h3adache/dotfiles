@@ -1,5 +1,9 @@
 #!/bin/zsh
 
+if (( !$+commands[antibody] )); then
+    brew install antibody
+fi
+
 basedir=${0:a:h}
 installdir=${basedir}/installs
 
