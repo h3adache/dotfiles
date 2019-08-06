@@ -9,7 +9,4 @@ export JRE_HOME=$(/usr/libexec/java_home -v 1.8)
 export TEX_PATH=/Library/TeX/Root/bin/x86_64-darwin:/Library/TeX/Root/bin/universal-darwin
 export PATH="/usr/local/sbin:/usr/local/anaconda3/bin:$TEX_PATH:$JAVA_HOME/bin:$PATH"
 
-source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
-source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
-
 export HOMEBREW_NO_INSTALL_CLEANUP=1 # prevent brew from auto cleanup so it's easier to swith to previous versions
