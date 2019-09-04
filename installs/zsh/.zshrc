@@ -19,6 +19,12 @@ setopt INC_APPEND_HISTORY # write to history file immediately
 setopt EXTENDED_HISTORY # history with start time and elapsed time
 setopt NO_CASE_MATCH
 
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
+zstyle ':completion:*:processes' command 'ps -A'
+zstyle ':completion:*' accept-exact '*(N)'
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path ${HOME}/.zsh/cache
+
 PLATFORM=$(uname | tr '[:upper:]' '[:lower:]')
 PLATFORM_CONFIG="${ZDOTDIR:-$HOME}/.zshrc.${PLATFORM}"
 
@@ -26,17 +32,13 @@ if [[ -s "${PLATFORM_CONFIG}" ]]; then
     source "${PLATFORM_CONFIG}"
 fi
 
-zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
-zstyle ':completion:*:processes' command 'ps -A'
-zstyle ':completion:*' accept-exact '*(N)'
-zstyle ':completion:*' use-cache on
-zstyle ':completion:*' cache-path ${HOME}/.zsh/cache
+autoload -U +X compinit && compinit
+autoload -U +X bashcompinit && bashcompinit
+
+# if [[ -n ${ZDOTDIR:-$HOME}/.zcompdump(#qN.mh+24) ]]; then
+# 	compinit;
+# else
+# 	compinit -C;
+# fi
 
 export PATH="${HOME}/bin:${PATH}"
-
-autoload -Uz compinit 
-if [[ -n ${ZDOTDIR:-$HOME}/.zcompdump(#qN.mh+24) ]]; then
-	compinit;
-else
-	compinit -C;
-fi
