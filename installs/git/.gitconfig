@@ -7,6 +7,7 @@
     editor = vim
     # makes less quit if everything can fit into 1 screen and not clear the terminal before displaying
     pager = less -F -X
+	hooksPath = ~/.githooks
 
 [alias]
     l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
