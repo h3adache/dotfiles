@@ -41,6 +41,7 @@
     m = merge
     co = checkout
     b = branch
+    cb = checkout -b
     f = fetch --all -p
     rb = rebase
     p = pull
