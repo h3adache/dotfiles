@@ -1,6 +1,6 @@
 ### prereqs
 
-* antibody
+* [Antibody](https://getantibody.github.io/)
 
 ### install
 
