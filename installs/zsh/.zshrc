@@ -1,10 +1,6 @@
-source <(antibody init)
-
 if [[ -s "${HOME}/.zplugins" ]]; then
     source ${HOME}/.zplugins
 fi
-
-antibody bundle ~/.zshrc.d
 
 # zsh history preferences
 export HISTFILE=${HOME}/.zsh_history
@@ -32,13 +28,13 @@ if [[ -s "${PLATFORM_CONFIG}" ]]; then
     source "${PLATFORM_CONFIG}"
 fi
 
+if [ -d ${HOME}/.zshrc.d ]; then
+  for file in ${HOME}/.zshrc.d/*.zsh; do
+    source ${file}
+  done
+fi
+
 autoload -U +X compinit && compinit
 autoload -U +X bashcompinit && bashcompinit
-
-# if [[ -n ${ZDOTDIR:-$HOME}/.zcompdump(#qN.mh+24) ]]; then
-# 	compinit;
-# else
-# 	compinit -C;
-# fi
 
 export PATH="${HOME}/bin:${PATH}"
