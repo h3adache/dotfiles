@@ -1,82 +1,48 @@
 [user]
-    name = Tim Chen
-	email = chengt@gmail.com
+  name = Tim Chen
+  email = chengt@gmail.com
+
+[includeIf "gitdir:~/Projects/Work/"]
+  path = ~/.gitwork
 
 [core]
-    excludesfile = ~/.gitignore
-    editor = vim
-    # makes less quit if everything can fit into 1 screen and not clear the terminal before displaying
-    pager = less -F -X
-	hooksPath = ~/.githooks
+  excludesfile = ~/.gitignore
+  editor = vim
+  # makes less quit if everything can fit into 1 screen and not clear the terminal before displaying
+  pager = less -F -X
+  hooksPath = ~/.githooks
 
-[alias]
-    l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%aN>%Creset' --date=relative
-    fl = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%aN/%aE>%Creset%n%b' --date=relative
-    cl = clone
-
-# I like using the interactive mode to make complex commits
-    ai = add --interactive
-
-# modified from http://www.metacircus.com/hacking/2011/02/18/play-git-like-a-violin.html
-    c = commit
-    cm = commit -m
-    ca = commit -a
-    cam = commit -a -m
-
-# amending the previous commit
-    caa = commit -a --amend -C HEAD
-    amend = commit --amend -C HEAD
-
-# reset
-## soft resets
-    rs = reset
-## hard resets
-    rh = reset --hard
-
-# shortcuts for commands
-    t = tag
-    s = status
-    d = diff
-    a = add
-    m = merge
-    co = checkout
-    b = branch
-    cb = checkout -b
-    f = fetch --all -p
-    rb = rebase
-    p = pull
-    pr = pull --rebase
-    ph = push
-    unstage = reset HEAD
+[include]
+  path = ~/.gitaliases
 
 [color]
-    ui = on
+  ui = on
 
 [color "branch"]
-    current = yellow reverse
-    local = yellow
-    remote = green
+  current = yellow reverse
+  local = yellow
+  remote = green
 
 [color "diff"]
-    meta = yellow bold
-    frag = magenta bold
-    old = red bold
-    new = green bold
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
 
 [color "status"]
-    added = yellow
-    changed = green
-    untracked = cyan
+  added = yellow
+  changed = green
+  untracked = cyan
 
 [push]
-    default = upstream
+  default = upstream
 
 [branch]
-    autosetupmerge = always
-    autosetuprebase = always
+  autosetupmerge = always
+  autosetuprebase = always
 
 [diff]
-    submodule = diff
+  submodule = diff
 
 [commit]
-    template = ~/.gitmessage
+  template = ~/.gitmessage

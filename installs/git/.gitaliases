@@ -1,0 +1,39 @@
+[alias]
+  l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%aN/%aE>%Creset' --date=relative
+  fl = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%aN/%aE>%Creset%n%b' --date=relative
+  cl = clone
+
+# I like using the interactive mode to make complex commits
+  ai = add --interactive
+
+# modified from http://www.metacircus.com/hacking/2011/02/18/play-git-like-a-violin.html
+  c = commit
+  cm = commit -m
+  ca = commit -a
+  cam = commit -a -m
+
+# amending the previous commit
+  caa = commit -a --amend -C HEAD
+  amend = commit --amend -C HEAD
+
+# reset
+## soft resets
+  rs = reset
+## hard resets
+  rh = reset --hard
+
+# shortcuts for commands
+  t = tag
+  s = status
+  d = diff
+  a = add
+  m = merge
+  co = checkout
+  b = branch
+  cb = checkout -b
+  f = fetch --all -p
+  rb = rebase
+  p = pull
+  pr = pull --rebase
+  ph = push
+  unstage = reset HEAD
