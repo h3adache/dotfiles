@@ -21,9 +21,9 @@ zstyle ':completion:*' accept-exact '*(N)'
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ${HOME}/.zsh/cache
 
+# platform specific configs
 PLATFORM=$(uname | tr '[:upper:]' '[:lower:]')
 PLATFORM_CONFIG="${ZDOTDIR:-$HOME}/.zshrc.${PLATFORM}"
-
 if [[ -s "${PLATFORM_CONFIG}" ]]; then
     source "${PLATFORM_CONFIG}"
 fi
@@ -34,9 +34,11 @@ if [ -d ${HOME}/.zshrc.d ]; then
   done
 fi
 
+# manual completions
 autoload -U +X compinit && compinit
 autoload -U +X bashcompinit && bashcompinit
-
 complete -o nospace -C /usr/local/bin/terraform terraform
 
-export PATH="${HOME}/bin:${PATH}"
+# export paths
+export GOPATH="${HOME}/go" # this is default but just being explicit
+export PATH="${HOME}/bin:${GOPATH}/bin${PATH}"
