@@ -10,3 +10,4 @@ export TEX_PATH=/Library/TeX/Root/bin/x86_64-darwin:/Library/TeX/Root/bin/univer
 export PATH="$TEX_PATH:$JAVA_HOME/bin:$PATH"
 
 export HOMEBREW_NO_INSTALL_CLEANUP=1 # prevent brew from auto cleanup so it's easier to swith to previous versions
+export PATH="/usr/local/opt/thrift@0.9/bin:$PATH" # add thrift to path

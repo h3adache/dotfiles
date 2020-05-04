@@ -41,4 +41,4 @@ complete -o nospace -C /usr/local/bin/terraform terraform
 
 # export paths
 export GOPATH="${HOME}/go" # this is default but just being explicit
-export PATH="${HOME}/bin:${GOPATH}/bin${PATH}"
+export PATH="${HOME}/bin:${GOPATH}/bin:${PATH}"
