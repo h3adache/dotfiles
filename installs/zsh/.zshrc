@@ -39,6 +39,8 @@ autoload -U +X compinit && compinit
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/terraform terraform
 
-# export paths
-export GOPATH="${HOME}/go" # this is default but just being explicit
-export PATH="${HOME}/bin:${GOPATH}/bin:${PATH}"
+# export go paths
+export GOPATH="${HOME}/go:${HOME}/Projects/go"
+export GOBIN="${HOME}/bin"
+
+export PATH="${GOPATH//://bin:}/bin:${HOME}/bin:${PATH}"
