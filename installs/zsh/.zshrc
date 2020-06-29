@@ -14,6 +14,7 @@ setopt EXTENDED_GLOB
 setopt INC_APPEND_HISTORY # write to history file immediately
 setopt EXTENDED_HISTORY # history with start time and elapsed time
 setopt NO_CASE_MATCH
+setopt INTERACTIVECOMMENTS
 
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
 zstyle ':completion:*:processes' command 'ps -A'
