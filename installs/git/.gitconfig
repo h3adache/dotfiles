@@ -2,7 +2,7 @@
   name = Tim Chen
   email = chengt@gmail.com
 
-[includeIf "gitdir:~/Projects/Work/"]
+[includeIf "gitdir:Work/"]
   path = ~/.gitwork
 
 [core]
