@@ -2,8 +2,7 @@
 
 alias ls='ls -G'
 
-export JDK_VERSION=11
-#export JDK_VERSION=1.8
+export JDK_VERSION=14
 export JAVA_HOME=$(/usr/libexec/java_home -v $JDK_VERSION)
 export IDEA_JDK=$JAVA_HOME
 export JRE_HOME=$JAVA_HOME
@@ -13,6 +12,3 @@ export PATH="$TEX_PATH:$JAVA_HOME/bin:$PATH"
 
 export HOMEBREW_NO_INSTALL_CLEANUP=1 # prevent brew from auto cleanup so it's easier to swith to previous versions
 export PATH="/usr/local/sbin:/usr/local/opt/thrift@0.9/bin:$PATH" # add thrift and homebrew sbin to path
-
-export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
