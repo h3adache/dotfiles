@@ -1,7 +1,11 @@
 ### prereqs
 
+* Homebrew
+
+### Uses
+
 * [Antibody](https://getantibody.github.io/)
 
-### install
+### Install
 
-run `./install` from checked out root
+Run `./install` from checked out root

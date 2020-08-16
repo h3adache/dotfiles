@@ -13,9 +13,6 @@ ln -sfvn ${installdir}/git/.git* ~
 # vim
 ln -sfvn ${installdir}/vim/.vimrc ~
 
-# x
-ln -sfvn ${installdir}/x/.Xdefaults ~
-
 # zsh
 ln -sfvn ${installdir}/zsh/.zsh* ~
 
