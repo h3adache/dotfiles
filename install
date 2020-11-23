@@ -5,16 +5,8 @@ if (( !$+commands[antibody] )); then
 fi
 
 basedir=${0:a:h}
-installdir=${basedir}/installs
-
-# git
-ln -sfvn ${installdir}/git/.git* ~
-
-# vim
-ln -sfvn ${installdir}/vim/.vimrc ~
-
-# zsh
-ln -sfvn ${installdir}/zsh/.zsh* ~
+for file in ${basedir}/installs/**/.*
+    ln -sfvn ${file} ~
 
 # manually install antibody plugins
 antibody bundle < ${basedir}/antibody/plugins > ~/.zplugins
