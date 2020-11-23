@@ -10,3 +10,6 @@ alias bzc='bazel clean'
 alias bzv='bazel version'
 
 alias tf='terraform'
+
+# taskwarrior
+alias t='task'
