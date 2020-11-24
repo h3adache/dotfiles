@@ -44,4 +44,4 @@ complete -o nospace -C /usr/local/bin/terraform terraform
 export GOPATH="${HOME}/go:${HOME}/Projects/go"
 export GOBIN="${HOME}/bin"
 
-export PATH="${GOPATH//://bin:}/bin:${HOME}/bin:${PATH}"
+export PATH="${GOPATH//://bin:}/bin:${HOME}/bin:/usr/local/sbin:${PATH}"
