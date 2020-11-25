@@ -1,1 +1,3 @@
-brew install antibody wget htop jq task terraform tree nvm
+brew install antibody wget htop jq task tree
+brew install go python openjdk
+brew install terraform awscli
