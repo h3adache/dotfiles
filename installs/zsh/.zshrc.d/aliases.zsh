@@ -13,3 +13,4 @@ alias tf='terraform'
 
 # taskwarrior
 alias t='task'
+alias tui='taskwarrior-tui'

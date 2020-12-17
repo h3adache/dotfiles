@@ -1,4 +1,4 @@
-# [Created by task 2.5.1 11/23/2020 12:25:26]
+# [Created by task 2.5.2 11/23/2020 12:25:26]
 # Taskwarrior program configuration file.
 # For more documentation, see http://taskwarrior.org or try 'man task', 'man task-color',
 # 'man task-sync' or 'man taskrc'
@@ -14,20 +14,20 @@
 data.location=~/.tasks
 
 # Color theme (uncomment one to use)
-#include /usr/local/Cellar/task/2.5.1/share/doc/task/rc/light-16.theme
-#include /usr/local/Cellar/task/2.5.1/share/doc/task/rc/light-256.theme
-#include /usr/local/Cellar/task/2.5.1/share/doc/task/rc/dark-16.theme
-include /usr/local/Cellar/task/2.5.1/share/doc/task/rc/dark-256.theme
-#include /usr/local/Cellar/task/2.5.1/share/doc/task/rc/dark-red-256.theme
-#include /usr/local/Cellar/task/2.5.1/share/doc/task/rc/dark-green-256.theme
-#include /usr/local/Cellar/task/2.5.1/share/doc/task/rc/dark-blue-256.theme
-#include /usr/local/Cellar/task/2.5.1/share/doc/task/rc/dark-violets-256.theme
-#include /usr/local/Cellar/task/2.5.1/share/doc/task/rc/dark-yellow-green.theme
-#include /usr/local/Cellar/task/2.5.1/share/doc/task/rc/dark-gray-256.theme
-#include /usr/local/Cellar/task/2.5.1/share/doc/task/rc/dark-gray-blue-256.theme
-#include /usr/local/Cellar/task/2.5.1/share/doc/task/rc/solarized-dark-256.theme
-#include /usr/local/Cellar/task/2.5.1/share/doc/task/rc/solarized-light-256.theme
-#include /usr/local/Cellar/task/2.5.1/share/doc/task/rc/no-color.theme
+#include /usr/local/Cellar/task/2.5.2/share/doc/task/rc/light-16.theme
+#include /usr/local/Cellar/task/2.5.2/share/doc/task/rc/light-256.theme
+#include /usr/local/Cellar/task/2.5.2/share/doc/task/rc/dark-16.theme
+include /usr/local/Cellar/task/2.5.2/share/doc/task/rc/dark-256.theme
+#include /usr/local/Cellar/task/2.5.2/share/doc/task/rc/dark-red-256.theme
+#include /usr/local/Cellar/task/2.5.2/share/doc/task/rc/dark-green-256.theme
+#include /usr/local/Cellar/task/2.5.2/share/doc/task/rc/dark-blue-256.theme
+#include /usr/local/Cellar/task/2.5.2/share/doc/task/rc/dark-violets-256.theme
+#include /usr/local/Cellar/task/2.5.2/share/doc/task/rc/dark-yellow-green.theme
+#include /usr/local/Cellar/task/2.5.2/share/doc/task/rc/dark-gray-256.theme
+#include /usr/local/Cellar/task/2.5.2/share/doc/task/rc/dark-gray-blue-256.theme
+#include /usr/local/Cellar/task/2.5.2/share/doc/task/rc/solarized-dark-256.theme
+#include /usr/local/Cellar/task/2.5.2/share/doc/task/rc/solarized-light-256.theme
+#include /usr/local/Cellar/task/2.5.2/share/doc/task/rc/no-color.theme
 
 color=on
 context.work=+work
@@ -40,6 +40,7 @@ alias.d=delete
 alias.wl=add +work priority:L project:work
 alias.wm=add +work priority:M project:work
 alias.wh=add +work priority:H project:work
+alias.w=add +work project:work
 uda.estimate.type=numeric
 uda.estimate.label=Estimate
 uda.size.type=string
@@ -48,6 +49,11 @@ uda.size.values=S,M,L
 uda.size.default=M
 report.list.labels=ID,Active,Age,D,P,Project,R,Sch,Due,Until,Description,Urg,Size
 report.list.columns=id,start.age,entry.age,depends.indicator,priority,project,recur.indicator,scheduled.countdown,due,until.remaining,description.count,urgency,size
-report.next.columns=id,start.age,entry.age,depends,priority,project,recur,scheduled.countdown,due.relative,until.remaining,description,urgency,size
-report.next.labels=ID,Active,Age,Deps,P,Project,Recur,S,Due,Until,Description,Urg,Size
+report.next.columns=id,start.age,entry.age,depends,priority,project,recur,scheduled.countdown,due.relative,until.remaining,description,urgency,size,tags
+report.next.labels=ID,Active,Age,Deps,P,Project,Recur,S,Due,Until,Description,Urg,Size,Tags
 defaultwidth=180
+alias.b=modify +next
+uda.priority.values=H,M,,L
+default.command=next
+report.list.sort=priority-,urgency-,size+,start-,due+
+alias.r=add project:reading +read
