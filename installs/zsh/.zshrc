@@ -35,6 +35,8 @@ if [ -d ${HOME}/.zshrc.d ]; then
   done
 fi
 
+source ${HOME}/.zshrc.spaceship
+
 # manual completions
 autoload -U +X compinit && compinit
 autoload -U +X bashcompinit && bashcompinit
