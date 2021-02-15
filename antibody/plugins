@@ -7,4 +7,4 @@ zsh-users/zsh-syntax-highlighting
 zsh-users/zsh-history-substring-search
 
 # themes
-h3adache/zsh
+denysdovhan/spaceship-prompt
