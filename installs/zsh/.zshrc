@@ -22,6 +22,11 @@ zstyle ':completion:*' accept-exact '*(N)'
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ${HOME}/.zsh/cache
 
+# export go paths
+export GOPATH="${HOME}/go:${HOME}/Projects/go"
+export GOBIN="${HOME}/bin"
+export PATH="${GOPATH//://bin:}/bin:${GOBIN}:/usr/local/sbin:${PATH}"
+
 # platform specific configs
 PLATFORM=$(uname | tr '[:upper:]' '[:lower:]')
 PLATFORM_CONFIG="${ZDOTDIR:-$HOME}/.zshrc.${PLATFORM}"
@@ -29,6 +34,7 @@ if [[ -s "${PLATFORM_CONFIG}" ]]; then
     source "${PLATFORM_CONFIG}"
 fi
 
+# zsh plugins
 if [ -d ${HOME}/.zshrc.d ]; then
   for file in ${HOME}/.zshrc.d/*.zsh; do
     source ${file}
@@ -41,9 +47,3 @@ source ${HOME}/.zshrc.spaceship
 autoload -U +X compinit && compinit
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/terraform terraform
-
-# export go paths
-export GOPATH="${HOME}/go:${HOME}/Projects/go"
-export GOBIN="${HOME}/bin"
-
-export PATH="${GOPATH//://bin:}/bin:${HOME}/bin:/usr/local/sbin:${PATH}"
