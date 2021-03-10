@@ -1,12 +1,13 @@
 #!/bin/zsh
 
-if (( !$+commands[antibody] )); then
-    brew install antibody
-fi
-
 basedir=${0:a:h}
 for file in ${basedir}/installs/**/.*
-    ln -sfvn ${file} ~
+    ln -sfvn ${file} ~/
 
-# manually install antibody plugins
-antibody bundle < ${basedir}/antibody/plugins > ~/.zplugins
+if (( !$+commands[antibody] )); then
+    echo "Missing antibody"
+else
+    # manually install antibody plugins
+    antibody bundle < ${basedir}/antibody/plugins > ~/.zplugins
+fi
+
