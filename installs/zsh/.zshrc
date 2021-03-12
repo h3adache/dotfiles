@@ -44,6 +44,7 @@ fi
 source ${HOME}/.zshrc.spaceship
 
 # manual completions
-autoload -U +X compinit && compinit
-autoload -U +X bashcompinit && bashcompinit
+fpath=(~/.zsh/completion $fpath)
+autoload -Uz +X compinit && compinit
+autoload -Uz +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/terraform terraform
