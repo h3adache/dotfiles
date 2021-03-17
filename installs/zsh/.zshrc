@@ -27,6 +27,8 @@ export GOPATH="${HOME}/go:${HOME}/Projects/go"
 export GOBIN="${HOME}/bin"
 export PATH="${GOPATH//://bin:}/bin:${GOBIN}:/usr/local/sbin:${PATH}"
 
+fpath=(~/.zsh/completions $fpath)
+
 # platform specific configs
 PLATFORM=$(uname | tr '[:upper:]' '[:lower:]')
 PLATFORM_CONFIG="${ZDOTDIR:-$HOME}/.zshrc.${PLATFORM}"
@@ -44,7 +46,6 @@ fi
 source ${HOME}/.zshrc.spaceship
 
 # manual completions
-fpath=(~/.zsh/completion $fpath)
 autoload -Uz +X compinit && compinit
 autoload -Uz +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/terraform terraform

@@ -1,5 +1,7 @@
 #!/bin/zsh
 
+mkdir -p ${HOME}/.zsh/completions
+
 basedir=${0:a:h}
 for file in ${basedir}/installs/**/.*
     ln -sfvn ${file} ~/
