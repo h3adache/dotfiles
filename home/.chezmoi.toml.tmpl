@@ -1,0 +1,17 @@
+{{- $name := promptStringOnce . "name" "User name" -}}
+{{- $email := promptStringOnce . "email" "Email address" -}}
+{{- $ghAccount := promptStringOnce . "ghAccount" "GH account" -}}
+
+[data]
+    name = {{ $name | quote }}
+    email = {{ $email | quote }}
+    ghAccount = {{ $ghAccount | quote }}
+
+[diff]
+    exclude = ["scripts"]
+{{- if (eq .chezmoi.os "darwin") }}
+
+[edit]
+    command = "code"
+    args = ["--wait"]
+{{- end }}

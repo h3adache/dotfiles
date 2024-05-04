@@ -1,0 +1,13 @@
+#!/bin/zsh
+
+# .zimrc hash: {{ include "dot_zimrc" | sha256sum }}
+zimfw() { source ~/.zim/zimfw.zsh "${@}" }
+
+# Install missing modules, and update ${ZIM_HOME}/init.zsh if missing or outdated.
+if [[ ! ${ZIM_HOME}/init.zsh -nt ${ZDOTDIR:-${HOME}}/.zimrc ]]; then
+  zimfw init -q
+fi
+
+zimfw uninstall -q
+zimfw install
+zimfw update

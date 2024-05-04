@@ -1,0 +1,51 @@
+# To profile uncomment next line, restart zsh and run zprof when started.
+# zmodload zsh/zprof
+
+# ------------------------------
+# Environment variables
+# ------------------------------
+export ZIM_HOME=~/.zim
+export STARSHIP_LOG=error
+export GOBIN="${HOME}/.local/bin"
+
+# ------------------------------
+# Path configuration
+# ------------------------------
+export PATH="${HOME}/bin:${HOME}/.local/bin:${PATH}"
+
+
+# ------------------------------
+# fpath
+# ------------------------------
+[[ -e ${HOME}/.zsh-completions ]] || mkdir -p ${HOME}/.zsh-completions
+fpath=(${HOME}/.zsh-completions ${fpath})
+
+# -----------------
+# zsh options
+# -----------------
+setopt HIST_IGNORE_ALL_DUPS # remove older dups even if not previous
+setopt CORRECT # Prompt for spelling correction of commands.
+WORDCHARS=${WORDCHARS/\/} # Remove path separator from WORDCHARS to treat / as a word delimiter
+
+bindkey -e # use emacs keybindings
+
+# ------------------------------
+# Initialize zim modules. fpath should be set before this.
+# ------------------------------
+source ${ZIM_HOME}/init.zsh
+
+# platform specific configuration
+# ------------------------------
+platform=$(uname | tr '[:upper:]' '[:lower:]')
+platform_config="${ZDOTDIR:-$HOME}/.zshrc.${platform}"
+[[ -f ${platform_config} ]] && source ${platform_config}
+
+# ------------------------------
+# Local configuration
+# ------------------------------
+[[ -f ${HOME}/.zshrc.local ]] && source ${HOME}/.zshrc.local
+
+# ------------------------------
+# Common alias configuration
+# ------------------------------
+[[ -f ${HOME}/.zshrc.aliases ]] && source ${HOME}/.zshrc.aliases

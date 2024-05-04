@@ -1,0 +1,18 @@
+[tools]
+go = "1.23"
+java = "21"
+node = "22"
+python = "3.9"
+usage = "latest"
+
+[settings]
+# let mise paths take precedence https://mise.jdx.dev/configuration/settings.html#activate_aggressive
+activate_aggressive = true
+# disable hints https://mise.jdx.dev/configuration/settings.html#disable_hints
+disable_hints = ["*"]
+# use default GOPATH ${GOPATH:-$HOME/go}/bin https://mise.jdx.dev/configuration/settings.html#go_set_gobin
+go_set_gobin = false
+# increase concurrency from default of 4 https://mise.jdx.dev/configuration/settings.html#jobs
+jobs = 12
+# default yes to prompts https://mise.jdx.dev/configuration/settings.html#yes
+yes = true

@@ -1,0 +1,7 @@
+{{ $brewExe := findExecutable "brew" (list "/opt/homebrew/bin" "/usr/local/bin" "/home/linuxbrew/.linuxbrew/bin" ".local/bin") -}}
+{{- if (and (eq .chezmoi.os "darwin") (stat $brewExe)) -}}
+#!/bin/zsh
+
+# .Brewfile hash: {{ include "dot_Brewfile.tmpl" | sha256sum }}
+{{$brewExe}} bundle --global --force --no-lock
+{{- end }}

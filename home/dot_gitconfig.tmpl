@@ -1,0 +1,51 @@
+[user]
+  name = {{ .name | quote }}
+  email = {{ .email | quote }}
+
+[branch]
+  autoSetupMerge = always
+  autoSetupRebase = always
+
+[color]
+  ui = auto
+
+[core]
+  editor = vim
+  excludesFile = ~/.gitignore
+  pager = less -F -X
+
+[diff]
+  submodule = diff
+
+# features
+[feature]
+  manyFiles = true
+
+[fetch]
+  prune = true
+  writeCommitGraph = true
+
+[init]
+  defaultBranch = main
+
+[pull]
+  rebase = true
+
+[push]
+  default = upstream
+  autoSetupRemote = true
+
+[rebase]
+  autoSquash = true
+  autoStash = true
+
+[rerere]
+  autoUpdate = true
+  enabled = true
+
+# includes
+[include]
+  path = ~/.gitaliases
+  path = ~/.gitcolors
+  # always allow work overrides
+  path = ~/.gitwork
