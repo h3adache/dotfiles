@@ -14,5 +14,8 @@ disable_hints = ["*"]
 go_set_gobin = false
 # increase concurrency from default of 4 https://mise.jdx.dev/configuration/settings.html#jobs
 jobs = 12
+# Use libgit2 for git operations https://mise.jdx.dev/configuration/settings.html#libgit2
+# This breaks ssh git https://github.com/jdx/mise/issues/3372
+libgit2 = false
 # default yes to prompts https://mise.jdx.dev/configuration/settings.html#yes
 yes = true
