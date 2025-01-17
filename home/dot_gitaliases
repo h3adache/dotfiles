@@ -41,5 +41,7 @@
 
 # stash commands
     sl = stash list
-    sph = stash push
+    sa = stash push
+    sd = stash drop
     sp = stash pop
+    ss = stash show
