@@ -4,15 +4,15 @@
 # ------------------------------
 # Environment variables
 # ------------------------------
-export ZIM_HOME=~/.zim
+export ZIM_HOME=${HOME}/.zim
 export STARSHIP_LOG=error
-export GOBIN="${HOME}/.local/bin"
+export GOBIN=${HOME}/.local/bin
+export HOMEBREW_NO_ENV_HINTS=1
 
 # ------------------------------
 # Path configuration
 # ------------------------------
 export PATH="${HOME}/bin:${HOME}/.local/bin:${PATH}"
-
 
 # ------------------------------
 # fpath
@@ -26,26 +26,19 @@ fpath=(${HOME}/.zsh-completions ${fpath})
 setopt HIST_IGNORE_ALL_DUPS # remove older dups even if not previous
 setopt CORRECT # Prompt for spelling correction of commands.
 WORDCHARS=${WORDCHARS/\/} # Remove path separator from WORDCHARS to treat / as a word delimiter
-
 bindkey -e # use emacs keybindings
+
+# ------------------------------
+# Common alias configuration
+# ------------------------------
+[[ -f ${HOME}/.zshrc.aliases ]] && source ${HOME}/.zaliases.zsh
 
 # ------------------------------
 # Initialize zim modules. fpath should be set before this.
 # ------------------------------
 source ${ZIM_HOME}/init.zsh
 
-# platform specific configuration
-# ------------------------------
-platform=$(uname | tr '[:upper:]' '[:lower:]')
-platform_config="${ZDOTDIR:-$HOME}/.zshrc.${platform}"
-[[ -f ${platform_config} ]] && source ${platform_config}
-
 # ------------------------------
 # Local configuration
 # ------------------------------
-[[ -f ${HOME}/.zshrc.local ]] && source ${HOME}/.zshrc.local
-
-# ------------------------------
-# Common alias configuration
-# ------------------------------
-[[ -f ${HOME}/.zshrc.aliases ]] && source ${HOME}/.zshrc.aliases
+[[ -f ${HOME}/.zlocal.zsh ]] && source ${HOME}/.zlocal.zsh

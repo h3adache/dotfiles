@@ -1,17 +1,22 @@
-{{- $name := promptStringOnce . "name" "User name" -}}
-{{- $email := promptStringOnce . "email" "Email address" -}}
-{{- $ghAccount := promptStringOnce . "ghAccount" "GH account" -}}
+{{- $name := promptStringOnce . "name" "Git user name?" -}}
+{{- $email := promptStringOnce . "email" "Git email address?" -}}
+{{- $ghAccount := promptStringOnce . "ghAccount" "Github account id?" -}}
+{{- $work := promptBoolOnce . "work" "Is this a work machine?" -}}
+
+{{- $osid := .chezmoi.os -}}
+{{- if hasKey .chezmoi.osRelease "id" -}}
+{{-   $osid = printf "%s-%s" .chezmoi.os .chezmoi.osRelease.id -}}
+{{- end -}}
 
 [data]
-    name = {{ $name | quote }}
-    email = {{ $email | quote }}
-    ghAccount = {{ $ghAccount | quote }}
+  email = {{ $email | quote }}
+  ghAccount = {{ $ghAccount | quote }}
+  name = {{ $name | quote }}
+  osid = {{ $osid | quote }}
+  work = {{ $work }}
 
 [diff]
-    exclude = ["scripts"]
-{{- if (eq .chezmoi.os "darwin") }}
+  exclude = ["scripts"]
 
-[edit]
-    command = "code"
-    args = ["--wait"]
-{{- end }}
+[gitHub]
+  refreshPeriod = "15m"

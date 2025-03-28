@@ -1,5 +1,5 @@
 # dotfiles
 
 ```sh
-curl -fsSL 'https://raw.githubusercontent.com/h3adache/dotfiles/main/install.sh?token=<token>' | sh -s
+curl -fsSL 'https://raw.githubusercontent.com/h3adache/dotfiles/main/install.sh' | sh -s
 ```

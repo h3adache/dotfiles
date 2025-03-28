@@ -1,6 +1,0 @@
-{{ $brewExe := findExecutable "brew" (list "/opt/homebrew/bin" "/usr/local/bin" "/home/linuxbrew/.linuxbrew/bin" ".local/bin") -}}
-{{ if stat $brewExe -}}
-fpath=("{{ output $brewExe "--prefix" | trim }}/share/zsh/site-functions" $fpath)
-
-eval "$({{ $brewExe }} shellenv)"
-{{ end -}}
