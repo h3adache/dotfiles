@@ -1,13 +1,14 @@
 [tools]
-go = "1.23"
-java = "21"
-node = "22"
+java = "latest"
+node = "lts"
 python = "3.9"
 usage = "latest"
 
 [settings]
 # let mise paths take precedence https://mise.jdx.dev/configuration/settings.html#activate_aggressive
 activate_aggressive = true
+# delete cache files not been accessed in this amount of time https://mise.jdx.dev/configuration/settings.html#cache_prune_age
+cache_prune_age = "7d"
 # disable hints https://mise.jdx.dev/configuration/settings.html#disable_hints
 disable_hints = ["*"]
 # use default GOPATH ${GOPATH:-$HOME/go}/bin https://mise.jdx.dev/configuration/settings.html#go_set_gobin
