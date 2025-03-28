@@ -7,11 +7,6 @@ zmodule input
 zmodule run-help
 zmodule utility
 
-## Completion Modules
-
-zmodule zsh-users/zsh-completions
-zmodule completion
-
 ## Community modules
 
 zmodule joke/zim-chezmoi
@@ -19,10 +14,14 @@ zmodule joke/zim-github-cli
 zmodule joke/zim-mise
 zmodule joke/zim-starship
 
-zmodule g-plane/pnpm-shell-completion --on-pull './zplug.zsh'
+## Completion Modules
+
+zmodule zsh-users/zsh-completions
+zmodule completion
 
 ## Modules that must be initialized last
 
-zmodule zsh-users/zsh-autosuggestions
+zmodule g-plane/pnpm-shell-completion --on-pull './zplug.zsh'
+zmodule zsh-users/zsh-syntax-highlighting # must be before zsh-history-substring-search
 zmodule zsh-users/zsh-history-substring-search
-zmodule zsh-users/zsh-syntax-highlighting
+zmodule zsh-users/zsh-autosuggestions

@@ -2,9 +2,7 @@
   type = "file"
   url = "https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh"
   refreshPeriod = "168h"
-{{- if (eq .chezmoi.os "darwin") }}
-[".config/alacritty/themes"]
+[".config/alacritty/alacritty-themes"]
   type = "git-repo"
   url = "https://github.com/alacritty/alacritty-theme.git"
   refreshPeriod = "168h"
-{{- end }}

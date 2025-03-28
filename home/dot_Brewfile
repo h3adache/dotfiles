@@ -1,0 +1,30 @@
+#-------------
+# fonts
+#-------------
+cask "font-jetbrains-mono"
+
+#-------------
+# utilities
+#-------------
+brew "gh"
+brew "git"
+brew "tmux"
+brew "tree"
+brew "zsh"
+cask "1password-cli"
+cask "appcleaner"
+
+#-------------
+# terminal emulator
+#-------------
+cask "alacritty"
+
+#-------------
+# development tools
+#-------------
+brew "jq"
+brew "shfmt"
+brew "btop"
+
+cask "jetbrains-toolbox"
+cask "visual-studio-code"

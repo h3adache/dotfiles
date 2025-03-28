@@ -9,24 +9,29 @@
 [color]
   ui = auto
 
+[column]
+   ui = auto
+
 [core]
   editor = vim
   excludesFile = ~/.gitignore
   pager = less -F -X
 
 [diff]
+  algorithm = histogram
+  renames = true
   submodule = diff
 
-# features
 [feature]
   manyFiles = true
 
-[fetch]
-  prune = true
-  writeCommitGraph = true
-
 [init]
   defaultBranch = main
+
+[fetch]
+  prune = true
+  pruneTags = true
+  writeCommitGraph = true
 
 [pull]
   rebase = true
