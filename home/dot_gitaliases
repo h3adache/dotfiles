@@ -40,8 +40,7 @@
     unstage = reset HEAD
 
 # stash commands
-    sl = stash list
-    sa = stash push
-    sd = stash drop
-    sp = stash pop
-    ss = stash show
+    stl = stash list
+    sts = stash push # stash save
+    std = stash drop # stash drop
+    sta = stash pop # stash apply
