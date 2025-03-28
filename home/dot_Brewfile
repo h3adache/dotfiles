@@ -1,0 +1,35 @@
+#-------------
+# fonts
+#-------------
+cask "font-jetbrains-mono"
+
+#-------------
+# utilities
+#-------------
+brew "btop"
+brew "gh"
+brew "git"
+brew "jq"
+brew "shfmt"
+brew "tmux"
+brew "tree"
+brew "zsh"
+cask "1password-cli"
+cask "appcleaner"
+cask "jordanbaird-ice"
+
+#-------------
+# terminal emulator
+#-------------
+cask "alacritty"
+
+# -------------
+# IDES
+# -------------
+cask "jetbrains-toolbox"
+cask "visual-studio-code"
+
+# -------------
+# vscode extensions
+# -------------
+vscode "editorconfig.editorconfig"
