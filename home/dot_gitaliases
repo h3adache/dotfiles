@@ -1,40 +1,42 @@
 [alias]
-  l = log --format="'%C(yellow)%h%Creset  %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'"
-  gl = l --graph
+  # Logs
+  l = log --oneline --decorate --graph --color --format='%C(auto)%h%d %C(blue)%an %C(green)%cr%C(reset) %s'
 
-# I like using the interactive mode to make complex commits
-  ai = add --interactive
+  # Status & Diff
+  s = status                                   # Show working tree status
+  d = diff                                     # Show unstaged changes
 
-  c = commit
-  cm = commit -m
-  ca = commit -a
-  cam = commit -a -m
-  cl = clone
+  # Add
+  a = add                                      # Add file contents to the index
+  ai = add --interactive                       # Interactive mode for adding changes
 
-# amending the previous commit
-  caa = commit -a --amend -C HEAD
-  amend = commit --amend -C HEAD
+  # Commit
+  c = commit                                   # Record changes to the repository
+  cm = commit -m                               # Commit with message
+  ca = commit -a                               # Commit all tracked files with changes, opening editor for message
+  cam = commit -a -m                           # Commit all tracked files with message
+  caa = commit -a --amend -C HEAD              # Amend last commit with all changes, keep old message
+  fix = commit --fixup                         # Create a fixup commit for autosquash.
 
-# autosquash. e.g. g fix <commit sha to fix>. rebase will squash
-  fix = commit --fixup
+  # Branching
+  b = branch -vv                               # List branches with verbose info
+  cb = checkout -b                             # Create and switch to a new branch
+  co = checkout                                # Switch branches or restore files
+  pb = !git b -vv | grep gone | cut -d' '  -f3 | xargs -r git b -D # Delete local branches whose upstream is gone
 
-# reset
-  rs = reset
-  rh = reset --hard
+  # Tag
+  t = tag                                      # List, create, or delete tags
 
-# shortcuts for commands
-  t = tag
-  s = status
-  d = diff
-  a = add
-  m = merge
-  co = checkout
-  b = branch -vv
-  pb = !git b -vv | grep gone | cut -d' '  -f3 | xargs -r git b -D # prune branch - keeping workspace clean
-  cb = checkout -b
-  f = fetch --all -p
-  rb = rebase
-  p = pull
-  pr = pull --rebase
-  ph = push
-  unstage = reset HEAD
+  # Fetch, Pull, Push
+  f = fetch --all                              # Fetch all remotes
+  p = pull                                     # Fetch and rebase changes from remote with pull.rebase: true
+  ph = push                                    # Push changes to remote
+
+  # Rebase & Merge
+  rb = rebase                                  # Reapply commits on top of another base tip
+  m = merge                                    # Join two or more development histories
+
+  # Reset
+  rs = reset                                   # Reset current HEAD to the specified state
+  rh = reset --hard                            # Hard reset: discard all changes
+  unstage = reset HEAD                         # Unstage files (keep changes in working directory)

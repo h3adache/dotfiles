@@ -1,57 +1,35 @@
 [user]
   name = {{ .name | quote }}
-  email = {{ .email | quote }}
+  email = {{ .email }}
 
 [branch]
-  autoSetupMerge = always
-  autoSetupRebase = always
-
-[color]
-  ui = auto
-
-[column]
-   ui = auto
+  autoSetupMerge = always          # Automatically sets upstream tracking on branch creation
+  autoSetupRebase = always         # Automatically sets rebase instead of merge when tracking a remote
 
 [core]
-  editor = vim
-  excludesFile = ~/.gitignore
-  pager = less -F -X
-  untrackedCache = true
-
-[diff]
-  algorithm = histogram
-  renames = true
-  submodule = diff
+  editor = vim                     # Use Vim as the default editor
+  excludesFile = ~/.gitignore      # Global ignore file
+  untrackedCache = true            # Enable untracked cache and only search dirs updated since last status check
 
 [feature]
-  manyFiles = true
-
-[init]
-  defaultBranch = main
+  manyFiles = true                 # Optimize for repos with many files (Git ≥2.31)
 
 [fetch]
-  prune = true
-  pruneTags = true
-  writeCommitGraph = true
+  prune = true                     # Prune deleted remote branches
+  pruneTags = true                 # Prune deleted remote tags
+  parallel = 4                     # Parallel fetches (Git ≥2.27)
+
+[init]
+  defaultBranch = main             # Use 'main' as the default branch
 
 [pull]
-  rebase = true
+  rebase = true                    # Use rebase instead of merge when pulling
 
 [push]
-  default = upstream
-  autoSetupRemote = true
+  autoSetupRemote = true           # Automatically set upstream on first push (Git ≥2.37)
+  default = upstream               # Push to upstream branch by default
 
-[rebase]
-  autoSquash = true
-  autoStash = true
-
-[rerere]
-  autoUpdate = true
-  enabled = true
-
-# includes
 [include]
-  path = ~/.gitaliases
-  path = ~/.gitcolors
-  # allow work overrides
-  path = ~/.gitwork
+  path = ~/.gitcolors              # External color settings
+  path = ~/.gitaliases             # External aliases
+  path = ~/.gitwork                # Work-specific overrides
