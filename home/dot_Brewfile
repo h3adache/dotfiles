@@ -1,6 +1,7 @@
 #-------------
 # fonts
 #-------------
+cask "font-go-mono-nerd-font"
 cask "font-jetbrains-mono"
 
 #-------------
@@ -26,10 +27,12 @@ cask "alacritty"
 # -------------
 # IDES
 # -------------
-cask "jetbrains-toolbox"
 cask "visual-studio-code"
 
 # -------------
 # vscode extensions
 # -------------
+vscode "dbaeumer.vscode-eslint"
+vscode "esbenp.prettier-vscode"
 vscode "editorconfig.editorconfig"
+vscode "yoavbls.pretty-ts-errors"
