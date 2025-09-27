@@ -26,6 +26,7 @@
 
   # Tag
   t = tag                                      # List, create, or delete tags
+  tl = tag -ln --sort=-creatordate              # List tags sorted. Add a query expression to search. e.g. `g tl '*my tags*'`
 
   # Fetch, Pull, Push
   f = fetch --all                              # Fetch all remotes
