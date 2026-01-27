@@ -11,8 +11,10 @@ zmodule utility
 
 zmodule joke/zim-chezmoi
 zmodule joke/zim-github-cli
-zmodule joke/zim-mise
 zmodule joke/zim-starship
+{{ if .mise -}}
+zmodule joke/zim-mise
+{{- end }}
 
 ## Completion Modules
 

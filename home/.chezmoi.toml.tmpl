@@ -1,7 +1,7 @@
 {{- $name := promptStringOnce . "name" "Git user name?" -}}
 {{- $email := promptStringOnce . "email" "Git email address?" -}}
 {{- $ghAccount := promptStringOnce . "ghAccount" "Github account id?" -}}
-{{- $work := promptBoolOnce . "work" "Is this a work machine?" -}}
+{{- $mise := promptBoolOnce . "mise" "Use mise?" -}}
 
 {{- $osid := .chezmoi.os -}}
 {{- if hasKey .chezmoi.osRelease "id" -}}
@@ -13,7 +13,7 @@
   ghAccount = {{ $ghAccount | quote }}
   name = {{ $name | quote }}
   osid = {{ $osid | quote }}
-  work = {{ $work }}
+  mise = {{ $mise }}
 
 [diff]
   exclude = ["scripts"]

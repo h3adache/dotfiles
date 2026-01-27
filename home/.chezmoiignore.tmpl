@@ -4,3 +4,6 @@
 .config/alacritty
 .zprofile
 {{ end }}
+{{ if not .mise }}
+.config/mise
+{{ end }}

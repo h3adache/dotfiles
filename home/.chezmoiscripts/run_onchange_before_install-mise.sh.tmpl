@@ -1,3 +1,4 @@
+{{ if .mise -}}
 #!/bin/sh
 
 # curl options
@@ -6,3 +7,4 @@
 # -L, --location              Follow redirects
 
 curl -sSL https://mise.run | sh -s
+{{ end }}
