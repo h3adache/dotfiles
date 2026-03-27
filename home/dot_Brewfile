@@ -15,9 +15,9 @@ brew "shfmt"
 brew "tmux"
 brew "tree"
 brew "zsh"
+
 cask "1password-cli"
 cask "appcleaner"
-cask "jordanbaird-ice"
 
 #-------------
 # terminal emulator
@@ -33,9 +33,8 @@ cask "visual-studio-code"
 # vscode extensions
 # -------------
 vscode "editorconfig.editorconfig"
-vscode "github.copilot"
 vscode "dbaeumer.vscode-eslint"
 vscode "ms-vscode-remote.remote-ssh"
-vscode "github.vscode-pull-request-github"
-vscode "ms-kubernetes-tools.vscode-kubernetes-tools"
 vscode "golang.Go"
+vscode "ms-python.python"
+vscode "TypeScriptTeam.native-preview"
