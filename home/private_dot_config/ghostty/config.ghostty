@@ -1,0 +1,9 @@
+font-family = GoMono Nerd Font
+font-size = 12
+theme = Catppuccin Mocha
+
+# macos
+macos-titlebar-style = tabs
+
+# window splitting
+split-divider-color = #f5e0dc

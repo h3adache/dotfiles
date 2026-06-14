@@ -18,11 +18,12 @@ brew "zsh"
 
 cask "1password-cli"
 cask "appcleaner"
+cask "brave-browser"
 
 #-------------
 # terminal emulator
 #-------------
-cask "alacritty"
+cask "ghostty"
 
 # -------------
 # IDES
