@@ -7,6 +7,7 @@ show_always = true
 
 [directory]
 truncate_to_repo = false
+truncation_length = 0
 
 [line_break]
 disabled = true
