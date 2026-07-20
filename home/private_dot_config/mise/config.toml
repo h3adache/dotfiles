@@ -12,7 +12,5 @@ activate_aggressive = true
 cache_prune_age = "7d"
 # disable hints https://mise.jdx.dev/configuration/settings.html#disable_hints
 disable_hints = ["*"]
-# use default GOPATH ${GOPATH:-$HOME/go}/bin https://mise.jdx.dev/configuration/settings.html#go_set_gobin
-go_set_gobin = false
 # default yes to prompts https://mise.jdx.dev/configuration/settings.html#yes
 yes = true
