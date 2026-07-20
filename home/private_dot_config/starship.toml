@@ -4,6 +4,10 @@ palette = 'catppuccin_mocha'
 
 [username]
 show_always = true
+format = "[$user]($style)@[$hostname]($style)"
+
+[hostname]
+ssh_only = false
 
 [directory]
 truncate_to_repo = false
