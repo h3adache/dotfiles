@@ -29,6 +29,7 @@ cask "ghostty"
 # IDES
 # -------------
 cask "visual-studio-code"
+cask "zed"
 
 # -------------
 # vscode extensions
