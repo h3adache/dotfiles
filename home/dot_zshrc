@@ -8,6 +8,7 @@ export ZIM_HOME=${HOME}/.zim
 export STARSHIP_LOG=error
 export GOBIN=${HOME}/.local/bin
 export HOMEBREW_NO_ENV_HINTS=1
+export HOMEBREW_NO_ASK=1
 
 # ------------------------------
 # Path configuration
